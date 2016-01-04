@@ -2,20 +2,25 @@
  * Basic app styles.
  */
 
+
+html
+  min-height 100%
+
+
 body
-  height 100%
-  font-weight 400
-  color $black
-  background $ligthGrey
-  font-size 14px
+  color @colorDark
+  font-family 'Montserrat', sans-serif
+  font-weight bold
   text-rendering optimizelegibility
   -webkit-font-smoothing antialiased
-  padding 20px
 
-::selection
-  background $grey
-  color $ligthGrey
+p
+  margin 0
 
 a
-  color $red
   text-decoration none
+
+::selection
+  color @colorPink
+  background @colorBlue
+

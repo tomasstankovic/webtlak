@@ -1,5 +1,6 @@
-import Hello from './modules/hello';
+import IndexBox from './modules/indexBox';
 
-var hello = new Hello();
+var index = new IndexBox();
 
-hello.getGreeting();
+index.init();
+

@@ -1,0 +1,13 @@
+hr
+p #{__('Change language')}: 
+  if locale == 'en'
+    a(href='?lang=sk') Slovenčina
+  else if locale == 'sk'
+    a(href='?lang=en') English
+
+p. 
+  #{__('Enviroment')}: #{CURRENT_ENV}
+  <br/>
+  #{__('Version')}: #{APP_VER}
+
+script(src='/build/js/build.js?ver=#{APP_VER}')

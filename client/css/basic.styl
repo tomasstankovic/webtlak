@@ -10,7 +10,7 @@ html
 body
   color @colorDark
   font-family 'Montserrat', sans-serif
-  font-weight bold
+  font-weight 700
   text-rendering optimizelegibility
   -webkit-font-smoothing antialiased
 
@@ -24,3 +24,7 @@ a
   color @colorPink
   background @colorBlue
 
+.row:after
+  content " "
+  display table
+  clear both

@@ -1,5 +1,7 @@
 {
-  "name": "slinto-devstack",
-  "version": "1.1.4",
-  "dependencies": {}
+  "name": "WEBtlak",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "^2.2.0"
+  }
 }

@@ -1,0 +1,96 @@
+.archive__wrapper
+  background url('../img/archiv_bg@2x.png') no-repeat
+  background-size 63%
+  margin-top 515px
+  padding-top 170px
+
+.archive
+  width $width
+  margin 0 auto
+  margin-bottom 150px
+
+.archive__item
+  float left
+  width 50%
+  box-sizing border-box
+  margin-bottom 100px
+
+  &:nth-child(odd)
+    padding-right 45px
+
+  &:nth-child(even)
+    padding-left 45px
+
+.archive__item-number
+  font-size 72px
+  line-height 57px
+
+.archive__item-limiter
+  display block
+  width 100%
+  height 20px
+  background $colorDark
+  margin 25px 0
+
+.archive__item-date
+  font-size 48px
+  line-height 43px
+
+.archive__item-place
+  font-size 24px
+  line-height 24px
+
+.archive__item-speaker
+  position relative
+  display block
+  margin-bottom 10px
+  padding 5px
+  padding-left 80px
+  min-height 55px
+  box-sizing border-box
+
+  &.video
+    span
+      color #000
+
+    .archive__item-speaker-icon
+      opacity 1
+
+    &:hover
+      background $colorPink
+      text-decoration none
+
+      span
+        color $colorBlue
+
+      .archive__item-speaker-icon
+        background-position 0 -43px
+
+  &:nth-child(5)
+    margin-top 40px
+
+.archive__item-speaker-icon
+  position absolute
+  top 50%
+  left 5px
+  width 62px
+  height 43px
+  margin-top -22px
+  background url('/build/img/youtube@2x.png') no-repeat
+  background-position 0 0
+  background-size 62px 86px
+  opacity .2
+
+.archive__item-speaker-title
+  display block
+  font-size 30px
+  line-height 30px
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+.archive__item-speaker-name
+  display block
+  font-size 18px
+  line-height 18px
+  font-weight 500

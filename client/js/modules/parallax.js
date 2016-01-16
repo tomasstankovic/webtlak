@@ -2,7 +2,6 @@ import $ from '../../../bower_components/jquery/dist/jquery.js';
 
 $(function() {
     ParallaxScroll.init();
-    console.log('dd');
 });
 
 

@@ -1,4 +1,5 @@
 .intro{
+  overflow hidden
   background: url('../img/pattern@2x.png');
   background-attachment:fixed;
   background-size: 12px 12px;
@@ -6,6 +7,7 @@
   height: 100%;
   min-height: 100%;
   box-sizing: border-box;
+  padding-bottom 100px
 
   @media(max-width: 600px) {
     padding: 2.5%;
@@ -14,13 +16,12 @@
 }
 
 .intro__box{
-  position: absolute;
-  top: 50%;
+  position: relative;
   left: 50%;
   width: 800px;
   height: auto;
   margin-left: -400px;
-  margin-top: -224px;
+  //margin-top: -224px;
   background: #fff;
   border: 20px solid $colorDark;
   box-sizing: border-box;
@@ -251,3 +252,42 @@
     line-height: 19px;
   }
 }
+
+.intro__speakers
+  width $width
+  margin 0 auto
+
+.intro__speaker
+  display inline-block
+  color $colorDark
+  margin 50px 0
+  padding 3px 7px
+
+  &.left
+    text-align left
+    float left
+    clear both
+
+  &.right
+    text-align right
+    float right
+    clear both
+
+  &:hover
+    color: $colorBlue;
+    background: $colorPink;
+    text-decoration: none;
+
+.intro__speaker-title
+  display block
+  font-size 100px
+  line-height 100px
+  font-weight 700
+  padding 5px
+
+.intro__speaker-name
+  display inline-block
+  font-size 60px
+  line-height 60px
+  font-weight 500
+  padding 5px

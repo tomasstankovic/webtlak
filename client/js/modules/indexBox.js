@@ -5,10 +5,12 @@ export default class IndexBox {
         introBox = document.getElementById('intro__box');
 
     var resize = function(){
-      intro.style.height = window.innerHeight + 'px';
+      //intro.style.height = window.innerHeight + 'px';
 
-      introBox.style.marginTop = -(introBox.offsetHeight / 2 ) + 'px';
-      introBox.style.marginLeft = -(introBox.offsetWidth / 2 ) + 'px';
+      var offset = ((window.innerHeight - introBox.offsetHeight) / 2 );
+
+      intro.style.paddingTop = offset + 'px';
+      introBox.style.marginBottom = (offset + 150) + 'px';
     };
 
     resize();

@@ -1,13 +1,23 @@
+$tabletBreak = 630px;
+$mobileBreak = 390px;
+$smallMobileBreak = 300px;
+
 .archive__wrapper
   background url('../img/archiv_bg@2x.png') no-repeat
   background-size 63%
-  margin-top 515px
+  margin-top 200px
   padding-top 170px
+
+  @media(max-width: $mobileBreak)
+    margin-top 100px
+    padding-top 70px
+
 
 .archive
   width $width
   margin 0 auto
   margin-bottom 150px
+
 
 .archive__item
   float left
@@ -21,9 +31,22 @@
   &:nth-child(even)
     padding-left 45px
 
+  @media(max-width: 1000px)
+    width 100%
+    margin-bottom 0
+
 .archive__item-number
   font-size 72px
   line-height 57px
+
+  @media(max-width: $tabletBreak)
+    font-size 62px
+    line-height 47px
+
+  @media(max-width: $mobileBreak)
+    font-size 52px
+    line-height 37px
+
 
 .archive__item-limiter
   display block
@@ -36,9 +59,21 @@
   font-size 48px
   line-height 43px
 
+  @media(max-width: $tabletBreak)
+    font-size 38px
+    line-height 33px
+
 .archive__item-place
   font-size 24px
   line-height 24px
+
+  @media(max-width: $tabletBreak)
+    font-size 20px
+    line-height 20px
+
+  @media(max-width: $mobileBreak)
+    font-size 17px
+    line-height 17px
 
 .archive__item-speaker
   position relative
@@ -48,6 +83,9 @@
   padding-left 80px
   min-height 55px
   box-sizing border-box
+
+  @media(max-width: 530px)
+    padding-left 0
 
   &.video
     span
@@ -80,6 +118,9 @@
   background-position 0 0
   background-size 62px 86px
   opacity .2
+
+  @media(max-width: 530px)
+    display none
 
 .archive__item-speaker-title
   display block

@@ -5,8 +5,6 @@ export default class IndexBox {
         introBox = document.getElementById('intro__box');
 
     var resize = function(){
-      //intro.style.height = window.innerHeight + 'px';
-
       var offset = ((window.innerHeight - introBox.offsetHeight) / 2 );
 
       intro.style.paddingTop = offset + 'px';
@@ -14,9 +12,9 @@ export default class IndexBox {
     };
 
     resize();
+
     window.onresize = function() {
       resize();
-
     };
   }
 }

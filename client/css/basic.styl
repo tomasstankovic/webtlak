@@ -1,14 +1,8 @@
-/**
- * Basic app styles.
- */
-
-
 html
   min-height 100%
 
-
 body
-  color @colorDark
+  color $colorDark
   font-family 'Montserrat', sans-serif
   font-weight 700
   text-rendering optimizelegibility
@@ -17,12 +11,15 @@ body
 p
   margin 0
 
-a
+a,
+a:focus,
+a:hover
   text-decoration none
+  outline none
 
 ::selection
-  color @colorPink
-  background @colorBlue
+  color $colorPink
+  background $colorBlue
 
 .row:after
   content " "

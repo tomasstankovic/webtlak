@@ -8,7 +8,9 @@ var express = require('express'),
  * GET: Index
  */
 router.get('/', function(req, res) {
-  res.render('static/index');
+  res.render('static/index',{
+    FB_EVENT_URL: 'http://www.facebook.com/events/544943585670939/'
+  });
 });
 
 module.exports = router;

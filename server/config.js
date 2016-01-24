@@ -18,6 +18,7 @@ var express = require('express'),
 var DEV_ENV = 'DEVELOPMENT',
     CURRENT_ENV = process.env.NODE_ENV || DEV_ENV,
     APP_VER = pjson.version,
+    APP_HOST,
     port = process.env.PORT || 8080,
     DB_URL = 'db_url_here';
 
@@ -30,7 +31,6 @@ var appSetup = function(app) {
   app.locals.APP_VER = APP_VER;
   app.set('view engine', 'jade');
   app.set('views', 'server/views');
-  //app.use(favicon(path.join(__dirname, '/../build/img/favicons/favicon.ico')));
   app.use(compress());
   app.use(methodOverride());
 
@@ -74,6 +74,13 @@ var appSetup = function(app) {
     } else {
       res.locals.publicPrefix = '/build';
     }
+    next();
+  });
+
+  // APP URL
+  app.use(function(req, res, next) {
+    APP_HOST = req.protocol + '://' + req.get('host');
+    app.locals.APP_HOST = APP_HOST;
     next();
   });
 

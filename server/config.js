@@ -95,10 +95,12 @@ var appSetup = function(app) {
     app.use('/build', express.static(path.join(__dirname, '../build'), {
       redirect: false
     }));
+    app.use('/', express.static(path.join(__dirname, '../data')));
   } else {
     app.use('/build', express.static(path.join(__dirname, '../build'), {
       redirect: false
     }));
+    app.use('/', express.static(path.join(__dirname, '../data')));
   }
 
   router.setup(app);

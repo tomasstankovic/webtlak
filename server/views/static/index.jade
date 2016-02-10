@@ -5,26 +5,25 @@ block content
     div#intro__box.intro__box
       h1.intro__heading(data-text='WEBtlak*') WEBtlak*
       h2.intro__subheading * Dizajn / Technológie / Budúcnosť
-      p.intro__version #2
+      p.intro__version #3
       img.intro__logo(src='/build/img/logo@2x.png')
 
-      p.intro__date 3.2.2016 — 19:00
+      p.intro__date 25.2.2016 — 19:00
       p.intro__place Záhrada CNK, Banská Bystrica
       a.intro__fb(href='#{FB_EVENT_URL}' target='_blank') facbook.com/webtlak
 
-    div.intro__speakers
+    //-div.intro__speakers
       a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
-        span.intro__speaker-title Ako použiť React.js
-        span.intro__speaker-name Andrej Gajdoš
+        span.intro__speaker-title Budúcnosť mikroservisov
+        span.intro__speaker-name Jakub Hadvig
 
       a.intro__speaker.right(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -200,  "smoothness": 10}')
-        span.intro__speaker-title Single Sign On
-        span.intro__speaker-name Michal Vagač
+        span.intro__speaker-title 2.prednáška
+        span.intro__speaker-name čoskoro
 
       a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -250, "smoothness": 10}')
-        span.intro__speaker-title PREtlak
-        span.intro__speaker-name Tomáš Pinka
-
+        span.intro__speaker-title 3.prednáška
+        span.intro__speaker-name čoskoro
 
   div.about
     p.about__text.
@@ -36,21 +35,21 @@ block content
     div.archive
       div.row
 
-        //- div.archive__item(data-parallax='{"y": -200, "smoothness": 10}')
-          p.archive__item-number #1
+        div.archive__item(data-parallax='{"y": -200, "smoothness": 10}')
+          p.archive__item-number #2
           span.archive__item-limiter
           p.archive__item-date 3.2.2016 — 19:00
           p.archive__item-place Záhrada CNK, Banská Bystrica
 
-          div.archive__item-speaker
+          a.archive__item-speaker.video(href="https://www.youtube.com/watch?v=MmhhFRDnp9o")
             div.archive__item-speaker-icon
-            span.archive__item-speaker-title Workflow
-            span.archive__item-speaker-name Tomáš Pinka & Tomáš Stankovič
+            span.archive__item-speaker-title Ako použiť React.js
+            span.archive__item-speaker-name Andrej Gajdoš
 
-          a.archive__item-speaker.video(href='#')
+          a.archive__item-speaker
             div.archive__item-speaker-icon
-            span.archive__item-speaker-title Workflow je síce krátky názov, ale čo ak bude dlhší
-            span.archive__item-speaker-name Meno Priezvisko
+            span.archive__item-speaker-title Single Sign On
+            span.archive__item-speaker-name Michal Vagač
 
         div.archive__item(data-parallax='{"y": -150, "smoothness": 10}')
           p.archive__item-number #1

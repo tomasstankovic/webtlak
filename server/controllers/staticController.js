@@ -9,8 +9,8 @@ var express = require('express'),
  */
 router.get('/', function(req, res) {
   res.render('static/index',{
-    FB_EVENT_URL: 'http://www.facebook.com/events/118594131876503/',
-    title: 'WEBtlak #5 / 27.4.2016 - 19.00 / Záhrada CNK'
+    FB_EVENT_URL: 'http://www.facebook.com/events/1721091454839582/',
+    title: 'WEBtlak #6 / 24.5.2016 (Utorok) - 19.00 / Záhrada CNK'
   });
 });
 

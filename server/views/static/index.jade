@@ -5,11 +5,13 @@ block content
     div#intro__box.intro__box
       h1.intro__heading(data-text='WEBtlak*') WEBtlak*
       h2.intro__subheading * Dizajn / Technológie / Budúcnosť
-      p.intro__version #6
+      a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #6
       img.intro__logo(src='/build/img/logo@2x.png')
-
-      p.intro__date 24.5.2016 — 19:00
-      p.intro__place Záhrada CNK, Banská Bystrica
+      br
+      a.intro__href(href='#{FB_EVENT_URL}' target='_blank')
+        span.intro__date 24.5.2016 — 19:00
+        br
+        span.intro__place Záhrada CNK, Banská Bystrica
       a.intro__fb(href='#{FB_EVENT_URL}' target='_blank') facbook.com/webtlak
 
     div.intro__speakers

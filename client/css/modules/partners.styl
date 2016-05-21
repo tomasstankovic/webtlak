@@ -1,0 +1,74 @@
+$tabletBreak = 630px
+$mobileBreak = 390px
+$smallMobileBreak = 300px
+
+.partners__wrapper
+  overflow hidden
+  background url('../img/partners_bg@2x.png') no-repeat
+  background-size 63%
+  padding-top 250px
+
+  @media(max-width: 1500px)
+    padding-top 150px
+
+  @media(max-width: 750px)
+    padding-top 80px
+  @media(max-width: $mobileBreak)
+    padding-top 70px
+
+.partners
+  overflow hidden
+  width $width
+  margin 0 auto
+  margin-bottom 150px
+
+.partners__item
+  float left
+  display inline-block
+  width 33%
+  height 246px
+  text-align center
+  box-sizing border-box
+  padding 38px
+  font 0/0 a
+
+  @media(max-width: 1500px)
+    padding 0
+    height 200px
+
+  @media(max-width: 1000px)
+    width 50%
+
+  @media(max-width: 750px)
+    height 150px
+
+  @media(max-width: $tabletBreak)
+    width 100%
+    height auto
+    padding 38px
+
+  @media(max-width: 500px)
+    padding 20px
+
+  &:before
+    content ' '
+    display inline-block
+    vertical-align middle
+    height 100%
+
+  &:hover
+    background #eee
+
+.partners__item-img
+  text-align center
+  margin 0 auto
+  display inline-block
+  vertical-align middle
+
+  &.size-square
+    width 40%
+    height auto
+
+  &.size-rect
+    width 80%
+    height auto

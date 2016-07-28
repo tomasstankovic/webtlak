@@ -1,0 +1,14 @@
+extends ../layout
+
+block vars
+    - var bodyClass = 'quiz-body ' + quiz.color;
+
+block content
+    div.quiz#quiz
+        div.quiz__header
+            p.quiz__header-bg ##{quiz.id}
+            p.quiz__header-id ##{quiz.id}
+            p.quiz__header-question #{quiz.question}
+
+        p.quiz__answer #{quiz.answer}
+        a.quiz__button(href='/anketa') Refresh

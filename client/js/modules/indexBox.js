@@ -4,17 +4,19 @@ export default class IndexBox {
     var intro = document.getElementById('intro'),
         introBox = document.getElementById('intro__box');
 
-    var resize = function(){
-      var offset = ((window.innerHeight - introBox.offsetHeight) / 2 );
+    if (intro) {
+      var resize = function(){
+        var offset = ((window.innerHeight - introBox.offsetHeight) / 2 );
 
-      intro.style.paddingTop = offset + 'px';
-      introBox.style.marginBottom = (offset + 150) + 'px';
-    };
+        intro.style.paddingTop = offset + 'px';
+        introBox.style.marginBottom = (offset + 150) + 'px';
+      };
 
-    resize();
-
-    window.onresize = function() {
       resize();
-    };
+
+      window.onresize = function() {
+        resize();
+      };
+    }
   }
 }

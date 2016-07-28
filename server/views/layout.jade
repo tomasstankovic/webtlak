@@ -1,8 +1,12 @@
 doctype html
 html
-  head
-    include head
-  body
-    block content
-    include footer
-    block scripts
+    head
+        include head
+
+    - var bodyClass = '';
+    block vars
+
+    body(class='#{bodyClass}')
+        block content
+        include footer
+        block scripts

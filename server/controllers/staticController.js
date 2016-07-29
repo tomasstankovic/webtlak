@@ -19,12 +19,12 @@ router.get('/', function(req, res) {
 /**
  * GET: Anketa
  */
-router.get('/anketa', function(req, res) {
+router.get('/vytlak', function(req, res) {
   var quizDatas = require('../../data/quiz.json');
   var quizData = quizDatas[helpers.getRandomNumber(0, quizDatas.length)];
 
-  res.render('static/quiz',{
-    title: 'Výsledky ankety',
+  res.render('static/vytlak',{
+    title: 'VYtlak',
     quiz: quizData
   });
 });

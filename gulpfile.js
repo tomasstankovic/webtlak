@@ -146,6 +146,8 @@ gulp.task('build', function() {
 gulp.task('release', function() {
   VERSION = args.v || args.version;
 
+  console.log('hovno');
+
   if (typeof VERSION !== 'undefined') {
     runSequence('clean', 'stylus', 'test', 'webpack', 'imagemin', 'bump', 'git-commit', 'git-push');
   } else {

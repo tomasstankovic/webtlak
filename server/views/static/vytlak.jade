@@ -20,4 +20,9 @@ block content
       p.quiz__header-question #{quiz.question}
 
     p.quiz__answer #{quiz.answer}
-    a.quiz__button(href='/vytlak') Refresh
+    if !autoRefresh
+      a.quiz__button(href='/vytlak') Refresh
+
+    if autoRefresh
+      script.
+        setTimeout(function(){ location.reload() }, 5000)

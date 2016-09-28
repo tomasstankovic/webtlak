@@ -9,24 +9,39 @@ var express = require('express'),
 /**
  * GET: Index
  */
-router.get('/', function(req, res) {
-  res.render('static/index',{
-    FB_EVENT_URL: 'http://www.facebook.com/webtlak/',
-    title: null
-  });
+router.get('/', function (req, res) {
+    res.render('static/index', {
+        FB_EVENT_URL: 'http://www.facebook.com/webtlak/',
+        title: null
+    });
 });
 
 /**
- * GET: Anketa
+ * GET: Vysledky prieskumu.
  */
-router.get('/vytlak', function(req, res) {
-  var quizDatas = require('../../data/quiz.json');
-  var quizData = quizDatas[helpers.getRandomNumber(0, quizDatas.length)];
+router.get('/vytlak', function (req, res) {
+    var quizDatas = require('../../data/quiz.json');
+    var quizData = quizDatas[helpers.getRandomNumber(0, quizDatas.length)];
 
-  res.render('static/vytlak',{
-    title: 'VYtlak',
-    quiz: quizData
-  });
+    res.render('static/vytlak', {
+        title: 'VYtlak',
+        quiz: quizData,
+        autoRefresh: false
+    });
+});
+
+/**
+ * GET: Vysledky ankety - auto refresh.
+ */
+router.get('/vytlak-refresh', function (req, res) {
+    var quizDatas = require('../../data/quiz.json');
+    var quizData = quizDatas[helpers.getRandomNumber(0, quizDatas.length)];
+
+    res.render('static/vytlak', {
+        title: 'VYtlak',
+        quiz: quizData,
+        autoRefresh: true
+    });
 });
 
 module.exports = router;

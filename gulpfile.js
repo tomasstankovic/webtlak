@@ -109,7 +109,7 @@ gulp.task('webpack', function() {
 
 gulp.task('git-commit', function() {
   var packageJSON = require('./package.json');
-  return gulp.src(['./build/*', './package.json', './bower.json'])
+  return gulp.src(['./build/*', './package.json'])
     .pipe(git.add({
       args: '-A'
     }))
@@ -126,7 +126,7 @@ gulp.task('git-push', function() {
 });
 
 gulp.task('bump', function() {
-  return gulp.src(['./bower.json', './package.json'])
+  return gulp.src(['./package.json'])
     .pipe(bump({
       type: VERSION
     }))
@@ -164,7 +164,7 @@ gulp.task('start-server', function() {
 
   livereload.listen();
   gulp.watch(['client/css/**/*.styl'], ['stylus']);
-  gulp.watch(['client/js/**/*.js', '!./client/js/bower_components/**/*.js', '!/client/js/build.js'], ['webpack']);
+  gulp.watch(['client/js/**/*.js', '!/client/js/build.js'], ['webpack']);
   gulp.watch(['test/**/*.js'], ['test']);
   gulp.watch(['build/css/app.css', 'build/img/**', 'server/views/**/*.jade']).on('change', livereload.changed);
   gulp.watch(['build/js/build-dev.js']).on('change', livereload.reload);

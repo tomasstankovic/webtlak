@@ -1,4 +1,5 @@
-import $ from '../../../bower_components/jquery/dist/jquery.js';
+import $ from '../lib/jquery';
+
 
 $(function() {
     ParallaxScroll.init();

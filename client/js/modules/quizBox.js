@@ -17,6 +17,10 @@ export default class QuizBox {
 
       resize();
 
+      window.onload = function() {
+        resize();
+      };
+
       window.onresize = function() {
         resize();
       };

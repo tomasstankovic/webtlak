@@ -11,7 +11,7 @@ var express = require('express'),
  */
 router.get('/', function (req, res) {
     res.render('static/index', {
-        FB_EVENT_URL: 'https://www.facebook.com/events/867706536694426/',
+        FB_EVENT_URL: 'https://www.facebook.com/events/537564236454762/',
         title: null
     });
 });

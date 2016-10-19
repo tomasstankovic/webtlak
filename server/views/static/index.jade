@@ -1,141 +1,163 @@
 extends ../layout
 
 block content
-  div#intro.intro
-    div#intro__box.intro__box
-      h1.intro__heading(data-text='WEBtlak*') WEBtlak*
-      h2.intro__subheading * Dizajn / Technológie / Budúcnosť
-      a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #7
-      img.intro__logo(src='/build/img/logo@2x.png')
-      br
-      a.intro__href(href='#{FB_EVENT_URL}' target='_blank')
-        span.intro__date 30.9.2016
-        br
-        span.intro__place Záhrada CNK, Banská Bystrica
-      a.intro__fb(href='#{FB_EVENT_URL}' target='_blank') facbook.com/webtlak
+    div#intro.intro
+        div#intro__box.intro__box
+            h1.intro__heading(data-text='WEBtlak*') WEBtlak*
+            h2.intro__subheading * Dizajn / Technológie / Budúcnosť
+            a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #8
+            img.intro__logo(src='/build/img/logo@2x.png')
+            br
+            a.intro__href(href='#{FB_EVENT_URL}' target='_blank')
+                span.intro__date 3.11.2016
+                br
+                span.intro__place Záhrada CNK, Banská Bystrica
+            a.intro__fb(href='#{FB_EVENT_URL}' target='_blank') facbook.com/webtlak
 
-    //div.intro__speakers
-      a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
-        span.intro__speaker-title Prezentácia designu
-        span.intro__speaker-name Martin Janek
+        div.intro__speakers
+          a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
+            span.intro__speaker-title 1 prototyp za 1000 meetingov
+            span.intro__speaker-name Andrej Minárik
 
-      a.intro__speaker.right(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -200,  "smoothness": 10}')
-        span.intro__speaker-title HTTP hlavičky
-        span.intro__speaker-name Tomáš Adamjak
+          a.intro__speaker.right(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -200,  "smoothness": 10}')
+            span.intro__speaker-title 2.prednáška
+            span.intro__speaker-name zverejníme čoskoro
 
-    //img.intro__arrow(src='/build/img/scroll-down.png')
+        //img.intro__arrow(src='/build/img/scroll-down.png')
 
-  div.about
-    p.about__text.
-      WEBtlak je mladé pravidelné stretnutie  nadšencov o moderné technológie a dizajn v Banskej Bystrici. Stoja za ním <a href='http://slinto.sk' target='_blank'>Tomáš S.</a> - Front-end developer a <a href='http://tomaspinka.com' target='_blank'>Tomáš P.</a> - Designer. Spoločne s Vami, chceme posúvať hranice digitálneho priestoru, kde trávime denno-denne veľa času. Rozprávme slovensky, pijeme kávu a žijeme aj offline životom. Budeme radi ak prídete povedať alebo si vypočuť aj vy niečo o zaujímavej téme a posunúť tlak vyššie. Ak máte otázku, alebo nás chcete hajpnúť tak <a href='mailto:pre@webtlak.sk'>pre@webtlak.sk</a>
-      <br/><br/>
-      <a href='http://eepurl.com/bCWFvb' target='_blank' class='about__newsletter'>—Dostávaj tlak pravidelne do mailu</a>
+    div.about
+        p.about__text.
+            WEBtlak je mladé pravidelné stretnutie  nadšencov o moderné technológie a dizajn v Banskej Bystrici. Stoja za ním <a href='http://slinto.sk' target='_blank'>Tomáš S.</a> - Front-end developer a <a href='http://tomaspinka.com' target='_blank'>Tomáš P.</a> - Designer. Spoločne s Vami, chceme posúvať hranice digitálneho priestoru, kde trávime denno-denne veľa času. Rozprávme slovensky, pijeme kávu a žijeme aj offline životom. Budeme radi ak prídete povedať alebo si vypočuť aj vy niečo o zaujímavej téme a posunúť tlak vyššie. Ak máte otázku, alebo nás chcete hajpnúť tak <a href='mailto:pre@webtlak.sk'>pre@webtlak.sk</a>
+            <br/><br/>
+            <a href='http://eepurl.com/bCWFvb' target='_blank' class='about__newsletter'>—Dostávaj tlak pravidelne do mailu</a>
 
-  div.archive__wrapper
-    div.archive
-      div.row
-        div.archive__item(data-parallax='{"y": -150, "smoothness": 10}')
-          p.archive__item-number #6
-          span.archive__item-limiter
-          p.archive__item-date 24.5.2016 — 19:00
-          p.archive__item-place Záhrada CNK, Banská Bystrica
+    div.archive__wrapper
+        div.archive
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=Votm3BcJCHM')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Prezentácia designu
-            span.archive__item-speaker-name Martin Janek
+            div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
+                p.archive__item-number #7
+                span.archive__item-limiter
+                p.archive__item-date 30.9.2016 — 19:00
+                p.archive__item-place Záhrada CNK, Banská Bystrica
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=BxnxeU2G9tY')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title HTTP hlavičky
-            span.archive__item-speaker-name Tomáš Adamjak
+                a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=_wl0sc81Z7Y')
+                    div.archive__item-speaker-icon
+                    span.archive__item-speaker-title Hello, Laravel
+                    span.archive__item-speaker-name Tomáš Gustiňák
 
-        div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
-          p.archive__item-number #5
-          span.archive__item-limiter
-          p.archive__item-date 27.4.2016 — 19:00
-          p.archive__item-place Záhrada CNK, Banská Bystrica
+                a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=YlO4xA-K8Uk')
+                    div.archive__item-speaker-icon
+                    span.archive__item-speaker-title Introduction to DDD
+                    span.archive__item-speaker-name Adam Štipák
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=hoKhSSsS_s8')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Čo s programátorom, ktorý robí špagety?
-            span.archive__item-speaker-name Tomáš Stankovič
+                a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=iQ5x-Bq3swo')
+                    div.archive__item-speaker-icon
+                    span.archive__item-speaker-title Clean Code
+                    span.archive__item-speaker-name Martin Rázus
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=7oS18mliS2A')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Nástroje moderného dizajnéra
-            span.archive__item-speaker-name Tomáš Pinka
+            div.row
+                div.archive__item(data-parallax='{"y": -50, "smoothness": 10}')
+                    p.archive__item-number #6
+                    span.archive__item-limiter
+                    p.archive__item-date 24.5.2016 — 19:00
+                    p.archive__item-place Záhrada CNK, Banská Bystrica
 
-        div.archive__item(data-parallax='{"y": -130, "smoothness": 10}')
-          p.archive__item-number #4
-          span.archive__item-limiter
-          p.archive__item-date 24.3.2016 — 19:00
-          p.archive__item-place Záhrada CNK, Banská Bystrica
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=Votm3BcJCHM')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Prezentácia designu
+                        span.archive__item-speaker-name Martin Janek
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=XbGGdJCCMrA')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Avocode - o firme, produkte a vývoji
-            span.archive__item-speaker-name Martin Ďuriš, Jakub Žitný
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=BxnxeU2G9tY')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title HTTP hlavičky
+                        span.archive__item-speaker-name Tomáš Adamjak
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=PFv7hBhexzc')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Dizajn orientovaný na človeka
-            span.archive__item-speaker-name Jozef Benko
+                div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
+                    p.archive__item-number #5
+                    span.archive__item-limiter
+                    p.archive__item-date 27.4.2016 — 19:00
+                    p.archive__item-place Záhrada CNK, Banská Bystrica
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=hp0GIzRW-KI')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Ako na užívateľské testovanie
-            span.archive__item-speaker-name Katarína Zalánová
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=hoKhSSsS_s8')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Čo s programátorom, ktorý robí špagety?
+                        span.archive__item-speaker-name Tomáš Stankovič
 
-        div.archive__item(data-parallax='{"y": -110, "smoothness": 10}')
-          p.archive__item-number #3
-          span.archive__item-limiter
-          p.archive__item-date 25.2.2016 — 19:00
-          p.archive__item-place Záhrada CNK, Banská Bystrica
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=7oS18mliS2A')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Nástroje moderného dizajnéra
+                        span.archive__item-speaker-name Tomáš Pinka
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=Pnbhlz-Q6FY')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Budúcnosť mikroservisov
-            span.archive__item-speaker-name Jakub Hadvig
+                div.archive__item(data-parallax='{"y": -130, "smoothness": 10}')
+                    p.archive__item-number #4
+                    span.archive__item-limiter
+                    p.archive__item-date 24.3.2016 — 19:00
+                    p.archive__item-place Záhrada CNK, Banská Bystrica
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=QJTETl_10Gg')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Výtlak 10 ročnej praxe
-            span.archive__item-speaker-name Tomáš Janek
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=XbGGdJCCMrA')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Avocode - o firme, produkte a vývoji
+                        span.archive__item-speaker-name Martin Ďuriš, Jakub Žitný
 
-        div.archive__item(data-parallax='{"y": -150, "smoothness": 10}')
-          p.archive__item-number #2
-          span.archive__item-limiter
-          p.archive__item-date 3.2.2016 — 19:00
-          p.archive__item-place Záhrada CNK, Banská Bystrica
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=PFv7hBhexzc')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Dizajn orientovaný na človeka
+                        span.archive__item-speaker-name Jozef Benko
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=MmhhFRDnp9o')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Ako použiť React.js
-            span.archive__item-speaker-name Andrej Gajdoš
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=hp0GIzRW-KI')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Ako na užívateľské testovanie
+                        span.archive__item-speaker-name Katarína Zalánová
 
-          a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=MpTaP6umQvE')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Single Sign On
-            span.archive__item-speaker-name Michal Vagač
+                div.archive__item(data-parallax='{"y": -110, "smoothness": 10}')
+                    p.archive__item-number #3
+                    span.archive__item-limiter
+                    p.archive__item-date 25.2.2016 — 19:00
+                    p.archive__item-place Záhrada CNK, Banská Bystrica
 
-        div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
-          p.archive__item-number #1
-          span.archive__item-limiter
-          p.archive__item-date 3.12.2015
-          p.archive__item-place Záhrada CNK, Banská Bystrica
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=Pnbhlz-Q6FY')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Budúcnosť mikroservisov
+                        span.archive__item-speaker-name Jakub Hadvig
 
-          div.archive__item-speaker(title='No, nenahrali sme to')
-            div.archive__item-speaker-icon
-            span.archive__item-speaker-title Workflow
-            span.archive__item-speaker-name Tomáš Pinka & Tomáš Stankovič
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=QJTETl_10Gg')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Výtlak 10 ročnej praxe
+                        span.archive__item-speaker-name Tomáš Janek
+
+                div.archive__item(data-parallax='{"y": -150, "smoothness": 10}')
+                    p.archive__item-number #2
+                    span.archive__item-limiter
+                    p.archive__item-date 3.2.2016 — 19:00
+                    p.archive__item-place Záhrada CNK, Banská Bystrica
+
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=MmhhFRDnp9o')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Ako použiť React.js
+                        span.archive__item-speaker-name Andrej Gajdoš
+
+                    a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=MpTaP6umQvE')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Single Sign On
+                        span.archive__item-speaker-name Michal Vagač
+
+                div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
+                    p.archive__item-number #1
+                    span.archive__item-limiter
+                    p.archive__item-date 3.12.2015
+                    p.archive__item-place Záhrada CNK, Banská Bystrica
+
+                    div.archive__item-speaker(title='No, nenahrali sme to')
+                        div.archive__item-speaker-icon
+                        span.archive__item-speaker-title Workflow
+                        span.archive__item-speaker-name Tomáš Pinka & Tomáš Stankovič
 
 
-  div.partners__wrapper
-    div.partners
-      a.partners__item(href='http://www.fpv.umb.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
-        img.partners__item-img.size-square(src='/build/img/partners/fpv@2x.png')
-      a.partners__item(href='http://www.startitup.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
-        img.partners__item-img.size-square(src='/build/img/partners/startitup@2x.png')
-      a.partners__item(href='http://bbonline.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
-        img.partners__item-img.size-rect(src='/build/img/partners/bbonline@2x.png')
+    div.partners__wrapper
+        div.partners
+            a.partners__item(href='http://www.fpv.umb.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
+                img.partners__item-img.size-square(src='/build/img/partners/fpv@2x.png')
+            a.partners__item(href='http://www.startitup.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
+                img.partners__item-img.size-square(src='/build/img/partners/startitup@2x.png')
+            a.partners__item(href='http://bbonline.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
+                img.partners__item-img.size-rect(src='/build/img/partners/bbonline@2x.png')

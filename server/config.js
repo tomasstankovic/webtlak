@@ -20,7 +20,7 @@ var DEV_ENV = 'DEVELOPMENT',
     APP_VER = pjson.version,
     APP_HOST,
     port = process.env.PORT || 8080,
-    DB_URL = 'db_url_here';
+    DB_URL = 'mongodb://webtlak:Tomasko4@ds033976.mlab.com:33976/webtlak-production';
 
 /**
  * Basic app setup.

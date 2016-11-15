@@ -1,28 +1,30 @@
 extends ../layout
 
 block ogmeta
-  meta(property="og:url" content="#{APP_HOST}/vytlak")
-  meta(property="og:site_name" content="WEBtlak")
-  meta(property="og:type" content="website")
-  meta(property="og:locale" content="sk_SK")
-  meta(property="og:title" content="VYtlak | WEBtlak - tlačíme, občas z nás aj niečo vypadne")
-  meta(property="og:description" content="VYtlak. Váš pohľad na WEBtlak na našom aj vašom webe.")
-  meta(property="og:image" content="#{APP_HOST}/build/img/fb-share-vytlak.png")
+    meta(property="og:url" content="#{APP_HOST}/vytlak")
+    meta(property="og:site_name" content="WEBtlak")
+    meta(property="og:type" content="website")
+    meta(property="og:locale" content="sk_SK")
+    meta(property="og:title" content="VYtlak | WEBtlak - tlačíme, občas z nás aj niečo vypadne")
+    meta(property="og:description" content="VYtlak. Váš pohľad na WEBtlak na našom aj vašom webe.")
+    meta(property="og:image" content="#{APP_HOST}/build/img/fb-share-vytlak.png")
 
 block vars
-  - var bodyClass = 'quiz-body ' + quiz.color;
+    - var bodyClass = 'quiz-body ' + quiz.color;
 
 block content
-  div.quiz#quiz
-    div.quiz__header
-      p.quiz__header-bg ##{quiz.id}
-      p.quiz__header-id ##{quiz.id}
-      p.quiz__header-question #{quiz.question}
+    div.quiz#quiz
+        div.quiz__header
+            p.quiz__header-bg ##{quiz.id}
+            p.quiz__header-id ##{quiz.id}
+            p.quiz__header-question #{quiz.question}
 
-    p.quiz__answer #{quiz.answer}
-    if !autoRefresh
-      a.quiz__button(href='/vytlak') Refresh
+        p.quiz__answer #{quiz.answer}
+        if !autoRefresh
+            a.quiz__button(href='/vytlak') Refresh
 
-    if autoRefresh
-      script.
-        setTimeout(function(){ location.reload() }, 5000)
+        if autoRefresh
+            script.
+                setTimeout(function () {
+                    location.reload()
+                }, 5000)

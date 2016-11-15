@@ -1,0 +1,98 @@
+extends ../layout
+
+block ogmeta
+    meta(property="og:url" content="#{APP_HOST}/zachran-zapisnik")
+    meta(property="og:site_name" content="WEBtlak")
+    meta(property="og:type" content="website")
+    meta(property="og:locale" content="sk_SK")
+    meta(property="og:title" content="Zachráň zápisník - Staň sa hrdinom! | WEBtlak - tlačíme, občas z nás aj niečo vypadne")
+    meta(property="og:description" content="Náš zápisík pre Vás uniesli. Pomôž nám ho dostať späť!")
+    meta(property="og:image" content="#{APP_HOST}/build/img/fb-share-vytlak.png")
+
+block vars
+    - var bodyClass = 'no-padding';
+
+block content
+    div.zapisnik-intro
+        if orderComplete == 'true'
+            div.row
+                div.zapisnik-thanks ĎAKUJEME
+                a.zapisnik-share(href='https://www.facebook.com/sharer/sharer.php?u=webtlak.sk/zachran-zapisnik' target='_blank') ZDIEĽAJ NA FB
+        h2.zapisnik-intro__text.
+            Pripravili sme pre vás zápisník. Ako sa stáva len v amerických filmoch, uniesli nám ho a zlý únoscovia od nás žiadajú výkupné.
+            Zápisník týrajú a nám je smutno. Ak neveríte pozrite sa na video pod týmto odkazom.
+            Rozhodli sme sa že sa naň s Vami poskladáme. <span class="text-underline">Pre každého</span> kto prispeje na záchranu zápisníku <span class="text-underline">máme pripravenú jeho kópiu.</span>
+
+        p.text-center
+            a.zapisnik-intro__scroll#zapisnik-scroll-down(href='#') SCROLLNI DOLE
+
+    div.zapisnik-sticky#zapisnik-video
+        div.zapisnik-sticky__timeline(style='width:30%')
+        div.zapisnik-sticky__logo WEBtlak*
+        div.zapisnik-sticky__time
+            div.col.
+                10:
+                <span>dní</span>
+            div.col.
+                23:
+                <span>hodín</span>
+            div.col.
+                12
+                <span>minút</span>
+        a.zapisnik__button.sticky#go-to-form-1(href='#') ZACHRáň zápisník
+
+    div.zapisnik-video
+        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
+        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
+        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
+        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
+        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
+        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
+
+
+        div.zapisnik-video__wrapper
+            //span.zapisnik-video__live LIVE
+            video(autoplay loop)
+                source(src="/build/video_1.mp4" type="video/mp4")
+            //a.zapisnik__button#go-to-form-2(href='#') Zachráň zápisník
+
+
+    div.zapisnik-hrdinovia
+        if ordersLength == 1
+            p.zapisnik-hrdinovia__bg #{ordersLength} hrdina
+        else if ordersLength > 1 && ordersLength < 5
+            p.zapisnik-hrdinovia__bg #{ordersLength} hrdinovia
+        else
+            p.zapisnik-hrdinovia__bg #{ordersLength} hrdinov
+
+        for order in orders
+            p.zapisnik-hrdinovia__hrdina #{order.name}, #{order.city}
+
+
+    div.zapisnik-form-wrapper#form-wrapper
+        div.zapisnik-form__inner
+            h3 Vyplň formulár a staň sa hrdinom. Dostaneš zápisník!
+
+            form.zapisnik-form(action='/zachran-zapisnik' method='POST')
+                div.col-2
+                    input(type='text' name='name' placeholder='Meno a Priezvisko *' required)
+                    input(type='text' name='street' placeholder='Ulica a číslo domu *' required)
+                    input(type='text' name='city' placeholder='Mesto *' required)
+                    input(type='text' name='postcode' placeholder='PSČ *' required)
+                div.col-2
+                    input(type='email' name='email' placeholder='E-mail *' required)
+                    textarea(name='message' placeholder='Odkaz pre únoscov (napr. Zápisník si prídem prevziať osobne)')
+
+                div.zapisnik-form__checkbox-wrapper
+                    input#form-checkbox(type="checkbox" name="agree" value="YES" checked)
+                    label(for="form-checkbox")
+                        div.row
+                            span.zapisnik-form__text-big 2,00€
+                            span  + Dobierka
+                        div.row  Čestne prehlasujem že zložím výkupné keď sa vyzbiera požadovaná suma.
+
+
+                input#form-submit.zapisnik__button(type='submit' value='Zaplatiť výkupné a stať sa hrdinom!')
+
+    p.zapisnik-footer
+        a.zapisnik-intro__scroll#zapisnik-scroll-up(href='#') HORE

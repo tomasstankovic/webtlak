@@ -9,7 +9,7 @@ var config = require('./config');
 var error = require('./lib/error_handler');
 
 config.appSetup(app);
-//config.dbConnect();
+config.dbConnect();
 error.setup(app);
 
 app.listen(config.port, function() {

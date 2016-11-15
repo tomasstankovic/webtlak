@@ -1,0 +1,436 @@
+.zapisnik-intro
+  position relative
+  margin-bottom 200px;
+
+  @media (max-width: 600px) {
+    margin-bottom: 100px;
+  }
+
+.zapisnik-thanks {
+  float: left;
+  color: #F00;
+  font-size: 120px;
+  position: relative;
+  top: -7px;
+  left: -9px;
+}
+
+.zapisnik-share {
+  position: relative;
+  top: 48px;
+  color: #2717ff;
+  float: left;
+  font-size: 30px;
+}
+
+.zapisnik-intro__text
+  font-size 48px
+  line-height 67px
+  padding 150px 20px
+  margin 0 auto
+  width 1000px
+  box-sizing border-box
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 100px 20px;
+    font-size: 30px;
+    line-height: 42px;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  @media (max-width: 350px) {
+    padding: 50px 20px;
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+.zapisnik-intro__scroll
+  color #2717ff
+
+.zapisnik-video
+  overflow: hidden;
+  position relative
+  padding 80px 0
+  background #050505
+  color #fff
+
+.zapisnik-video__wrapper
+  position: relative;
+  width: 800px;
+  height: 480px;
+  margin 0 auto
+
+  @media (max-width: 800px) {
+    width: 90%;
+    height: auto;
+  }
+
+  video
+    display block
+    width: 800px;
+    height: 480px;
+
+    @media (max-width: 800px) {
+      width: 100%;
+      height: auto;
+    }
+
+  .zapisnik__button {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    right: -200px;
+  }
+
+.zapisnik-video__live {
+  position: absolute;
+  top: -30px;
+  right: -65px;
+  text-align: center;
+  width: 130px;
+  height: 60px;
+  background-color: #2717ff;
+  font-size: 16px;
+  line-height: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.zapisnik-video__money
+  z-index: 1;
+  position: absolute;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 72px;
+  white-space: nowrap;
+  text-shadow: -5px -5px #000;
+
+  span {
+    position: relative;
+    top: -35px;
+    left: 5px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+.zapisnik-sticky
+  z-index 10
+  position relative
+  top 0
+  left 0
+  height 100px
+  width 100%
+  box-sizing border-box
+  padding 20px 40px
+  background #fff
+
+  &.fixed {
+    position: fixed;
+  }
+
+.zapisnik-sticky__timeline
+  z-index 0
+  position absolute
+  top 0
+  left 0
+  display block
+  height 100px
+  background #2717ff
+
+.zapisnik-sticky__logo
+  z-index 1
+  position absolute
+  top 33px;
+  left 10px
+  font-size: 30px;
+  font-weight: 700;
+  color: #FFF;
+
+
+.zapisnik__button
+  color #fff
+  background $colorPink
+  text-align center
+  text-transform uppercase
+  font-size: 14px;
+  font-weight: 700;
+  display block
+  width: 280px;
+  height: 80px;
+  line-height 80px
+
+  &.sticky
+    z-index 1
+    position absolute
+    top 10px
+    right 10px
+
+  &:hover
+    background #FF0
+    color #000
+
+.zapisnik-sticky__time
+  z-index 1
+  position absolute
+  top 14px
+  left 50%
+  margin-left -100px
+  color #000
+  font-size 44px
+  font-weight 700
+  line-height 50px
+  text-transform uppercase
+  width 200px
+  text-align center
+
+  .col
+    float left
+
+  span
+    text-align left
+    display block
+    color #959595
+    font-size 11px
+    font-weight 700
+    line-height 11px
+
+.zapisnik-hrdinovia
+  position relative
+  width 100%
+  height 1000px
+  box-sizing border-box
+  padding 100px
+  overflow hidden
+
+  @media (max-width: 600px) {
+    height: 700px;
+  }
+
+.zapisnik-hrdinovia__bg
+  position absolute
+  top 50%
+  left -7px
+  width 100%
+  margin-top -70px
+  text-align left
+  opacity 0.1
+  font-family Montserrat
+  font-size 160px
+  font-weight 700
+  line-height 140px
+  text-transform uppercase
+
+  @media (max-width: 1000px) {
+    font-size: 150px;
+    line-height: 130px;
+  }
+
+  @media (max-width: 780px) {
+    font-size: 120px;
+    line-height: 100px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 100px;
+    line-height: 80px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 80px;
+    line-height: 70px;
+  }
+
+.zapisnik-hrdinovia__hrdina
+  position absolute
+  font-size 48px
+  font-weight 700
+  line-height 64px
+  white-space: nowrap;
+
+  @media (max-width: 850px) {
+    font-size: 38px;
+    line-height: 53px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+.zapisnik-form-wrapper
+  background #050505
+  color #fff
+  padding-top 80px
+  padding-bottom 200px
+
+.zapisnik-form__inner
+  width 100%
+  box-sizing border-box
+  padding 0 20px
+  max-width 800px
+  margin 0 auto
+
+  h3
+    font-size 30px
+    font-weight 700
+    text-align center
+
+.zapisnik-form
+  overflow hidden
+  margin-left -5px
+  margin-right -5px
+
+  input,
+  textarea
+    width 100%
+    height 60px
+    margin-bottom 10px
+    border none
+    padding 20px
+    box-sizing border-box
+    font-size 20px
+    font-weight 400
+    color #000
+
+    &:focus
+      outline none
+
+  textarea
+    height 200px
+    resize: none;
+
+  input.zapisnik__button
+    color #fff
+    height 80px
+    font-size 14px
+    line-height 19px
+    padding 0 20px
+    margin-left 5px
+    margin-right 5px
+
+    &:hover
+      color #000
+
+    &[disabled]
+      opacity .3
+
+      &:hover {
+        background: $colorPink;
+        color: #fff;
+      }
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 85px;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: #f8f8f8;
+}
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '👍';
+  position: absolute;
+  top: 1px;
+  left: 6px;
+  font-size: 48px;
+  color: #FF0;
+}
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+}
+
+/* hover style just for information */
+label:hover:before {
+}
+
+.zapisnik-form__checkbox-wrapper {
+  float: left;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100%;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  label {
+    display: block;
+    height: 60px;
+    font-weight: 400;
+    font-size: 18px;
+  }
+}
+
+.zapisnik-form__text-big {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.zapisnik-footer {
+  padding: 40px 20px;
+  text-align: center;
+}

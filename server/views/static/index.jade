@@ -5,27 +5,27 @@ block content
         div#intro__box.intro__box
             h1.intro__heading(data-text='WEBtlak*') WEBtlak*
             h2.intro__subheading * Dizajn / Technológie / Budúcnosť
-            a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #8
+            a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #9
             img.intro__logo(src='/build/img/logo@2x.png')
             br
             a.intro__href(href='#{FB_EVENT_URL}' target='_blank')
-                span.intro__date 3.11.2016
+                span.intro__date 1.12.2016
                 br
                 span.intro__place Záhrada CNK, Banská Bystrica
             a.intro__fb(href='#{FB_EVENT_URL}' target='_blank') facbook.com/webtlak
 
         div.intro__speakers
             a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
-                span.intro__speaker-title 1 prototyp za 1000 meetingov
-                span.intro__speaker-name Andrej Minárik
+                span.intro__speaker-title TypeScript 2.0 + VSCode = happy dev
+                span.intro__speaker-name Dušan Roštár
 
             a.intro__speaker.right(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -200,  "smoothness": 10}')
-                span.intro__speaker-title Yet another travel app
-                span.intro__speaker-name Michal Vician
+                span.intro__speaker-title Continuous integration - čo s tým?
+                span.intro__speaker-name Igor Surový
 
             a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
-                span.intro__speaker-title PREtlak
-                span.intro__speaker-name Tomáš Pinka
+                span.intro__speaker-title PODtlak
+                span.intro__speaker-name Tomáš Stankovič
 
         //img.intro__arrow(src='/build/img/scroll-down.png')
 
@@ -37,6 +37,22 @@ block content
 
     div.archive__wrapper
         div.archive
+
+            div.archive__item(data-parallax='{"y": -150, "smoothness": 10}')
+                p.archive__item-number #8
+                span.archive__item-limiter
+                p.archive__item-date 3.11.2016 — 19:00
+                p.archive__item-place Záhrada CNK, Banská Bystrica
+
+                span.archive__item-speaker
+                    div.archive__item-speaker-icon
+                    span.archive__item-speaker-title 1000 prototypov - 1 meeting
+                    span.archive__item-speaker-name Andrej Minárik
+
+                span.archive__item-speaker
+                    div.archive__item-speaker-icon
+                    span.archive__item-speaker-title PREtlak
+                    span.archive__item-speaker-name Tomáš Pinka
 
             div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
                 p.archive__item-number #7

@@ -49,16 +49,19 @@ router.get('/vytlak-refresh', function (req, res) {
  * GET: Zachran zapisnik
  */
 router.get('/zachran-zapisnik', function (req, res) {
+    let today = new Date();
+    let start = new Date(2016, 11, 1);
+    let end = new Date(2016, 11, 8);
+    let diff = new Date(end.getTime() - today.getTime());
+    let days = diff.getUTCDate() - 1;
+    let hours = diff.getUTCHours();
+    let minutes = diff.getUTCMinutes();
+    let seconds = diff.getUTCSeconds();
+    let percentage = Math.round(((today - start) / (end - start)) * 100);
 
-    var date1 = new Date();
-    var date2 = new Date(2016, 11, 8);
-    var diff = new Date(date2.getTime() - date1.getTime());
-
-    var years = diff.getUTCFullYear() - 1970;
-    var months = diff.getUTCMonth();
-    var days = diff.getUTCDate()-1;
-
-    console.log(`${years} y, ${months}mon, ${days}days`)
+    hours = (hours < 10) ? `0${hours}` : hours;
+    minutes = (minutes < 10) ? `0${minutes}` : minutes;
+    seconds = (seconds < 10) ? `0${seconds}` : seconds;
 
     orderModel.find({}, function(err, orders) {
         if (err) {
@@ -70,7 +73,14 @@ router.get('/zachran-zapisnik', function (req, res) {
             title: 'Zachráň zápisník — Staň sa hrdinom)',
             orders: orders,
             ordersLength: orders.length,
-            orderComplete: req.query.hero || null
+            orderComplete: req.query.hero || null,
+            time: {
+                days: days,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds,
+                percentage: percentage
+            }
         });
     });
 });

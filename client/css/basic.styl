@@ -8,6 +8,7 @@ body
   text-rendering optimizelegibility
   -webkit-font-smoothing antialiased
   padding-bottom 250px
+  cursor: url('../img/cursor.png') 25 30, auto;
 
   @media(max-width 500px)
     padding-bottom 150px
@@ -17,9 +18,13 @@ p
 
 a,
 a:focus,
-a:hover
+a:hover,
+input:hover,
+textarea:hover,
+label:hover
   text-decoration none
   outline none
+  cursor: url('../img/cursor.png') 25 30, auto !important;
 
 ::selection
   color $colorPink

@@ -24,39 +24,39 @@ block content
             Rozhodli sme sa že sa naň s Vami poskladáme. <span class="text-underline">Pre každého</span> kto prispeje na záchranu zápisníku <span class="text-underline">máme pripravenú jeho kópiu.</span>
 
         p.text-center
-            a.zapisnik-intro__scroll#zapisnik-scroll-down(href='#') SCROLLNI DOLE
+            a.zapisnik-intro__scroll#zapisnik-scroll-down(href='#') SKOČ DOLE
 
     div.zapisnik-sticky#zapisnik-video
-        div.zapisnik-sticky__timeline(style='width:30%')
+        div.zapisnik-sticky__timeline(style='width:#{time.percentage}%')
         div.zapisnik-sticky__logo WEBtlak*
         div.zapisnik-sticky__time
             div.col.
-                10:
+                <div id="days">#{time.days}</div>:
                 <span>dní</span>
             div.col.
-                23:
+                <div id="hours">#{time.hours}</div>:
                 <span>hodín</span>
             div.col.
-                12
+                <div id="minutes">#{time.minutes}</div>:
                 <span>minút</span>
-        a.zapisnik__button.sticky#go-to-form-1(href='#') ZACHRáň zápisník
+            div.col.
+                <div id="seconds">#{time.seconds}</div>
+                <span>sekúnd</span>
+        a.zapisnik__button.go-to-form-button.sticky(href='#') ZACHRáň zápisník
 
     div.zapisnik-video
-        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
-        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
-        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
-        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
-        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
-        p.zapisnik-video__money #{ordersLength * 2}€<span>/ 200€</span>
-
+        - for (var i = 0; i < 6; i++)
+            p.zapisnik-video__money.
+                #{ordersLength * 2}€<span>/ 200€</span>
+                <a class="zapisnik__button go-to-form-button" "href='#'">ZACHRáň zápisník</a>
 
         div.zapisnik-video__wrapper
-            //span.zapisnik-video__live LIVE
             video(autoplay loop)
                 source(src="/build/video_1.mp4" type="video/mp4")
-            //a.zapisnik__button#go-to-form-2(href='#') Zachráň zápisník
 
 
+    div.zapisnik-mobile-button
+        a.zapisnik__button.go-to-form-button(href='#') ZACHRáň zápisník
     div.zapisnik-hrdinovia
         if ordersLength == 1
             p.zapisnik-hrdinovia__bg #{ordersLength} hrdina

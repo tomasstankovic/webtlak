@@ -123,6 +123,32 @@
     line-height: 18px;
   }
 
+  .zapisnik__button {
+    display: none;
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    background: #ff0;
+    text-shadow: none;
+
+    @media(max-width: 900px) {
+      display: none !important;
+    }
+  }
+
+  &:hover .zapisnik__button {
+    display: block;
+  }
+
+
+  @media (max-width: 600px) {
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6){
+      display: none;
+    }
+  }
+
 .zapisnik-sticky
   z-index 10
   position relative
@@ -133,6 +159,12 @@
   box-sizing border-box
   padding 20px 40px
   background #fff
+
+  @media (max-width: 900px) {
+    .zapisnik__button {
+      display: none;
+    }
+  }
 
   &.fixed {
     position: fixed;
@@ -151,11 +183,10 @@
   z-index 1
   position absolute
   top 33px;
-  left 10px
+  left 30px
   font-size: 30px;
   font-weight: 700;
-  color: #FFF;
-
+  color: #000;
 
 .zapisnik__button
   color #fff
@@ -184,17 +215,26 @@
   position absolute
   top 14px
   left 50%
-  margin-left -100px
+  margin-left -150px
   color #000
   font-size 44px
   font-weight 700
   line-height 50px
   text-transform uppercase
-  width 200px
+  width 300px
   text-align center
 
+  @media (max-width: 900px) {
+    left: initial;
+    right: 20px;
+  }
+
   .col
-    float left
+    display inline-block
+    margin: 0 4px;
+
+    div
+      display inline
 
   span
     text-align left
@@ -203,6 +243,17 @@
     font-size 11px
     font-weight 700
     line-height 11px
+    padding-left: 5px;
+
+.zapisnik-mobile-button
+  padding 60px 100px
+  padding-bottom 10px
+  display: none;
+  overflow: hidden;
+
+  @media (max-width: 900px) {
+    display: block;
+  }
 
 .zapisnik-hrdinovia
   position relative
@@ -270,8 +321,8 @@
 .zapisnik-form-wrapper
   background #050505
   color #fff
-  padding-top 80px
-  padding-bottom 200px
+  padding-top 60px
+  padding-bottom 120px
 
 .zapisnik-form__inner
   width 100%
@@ -317,6 +368,7 @@
     padding 0 20px
     margin-left 5px
     margin-right 5px
+    white-space: normal;
 
     &:hover
       color #000
@@ -418,7 +470,8 @@ label:hover:before {
 
   label {
     display: block;
-    height: 60px;
+    min-height: 60px;
+    height: auto;
     font-weight: 400;
     font-size: 18px;
   }

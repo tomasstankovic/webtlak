@@ -10,6 +10,7 @@
     "node": "^7.0.0"
   },
   "dependencies": {
+    "@risingstack/trace": "^2.36.0",
     "body-parser": "^1.15.2",
     "compression": "^1.6.2",
     "connect-flash": "^0.1.1",

@@ -26,102 +26,103 @@ var DEV_ENV = 'DEVELOPMENT',
  * Basic app setup.
  * @param {Object} app Express object
  */
-var appSetup = function(app) {
-  app.locals.CURRENT_ENV = CURRENT_ENV;
-  app.locals.APP_VER = APP_VER;
-  app.set('view engine', 'jade');
-  app.set('views', 'server/views');
-  app.use(compress());
-  app.use(methodOverride());
+var appSetup = function (app) {
+    app.locals.CURRENT_ENV = CURRENT_ENV;
+    app.locals.APP_VER = APP_VER;
+    app.set('view engine', 'jade');
+    app.set('views', 'server/views');
+    app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
+    app.use(compress());
+    app.use(methodOverride());
 
-  i18n.configure({
-    locales: ['en', 'sk'],
-    defaultLocale: 'en',
-    directory: __dirname + '/../locales',
-    cookie: 'lang'
-  });
-  app.use(cookieParser());
-  app.use(i18n.init);
+    i18n.configure({
+        locales: ['en', 'sk'],
+        defaultLocale: 'en',
+        directory: __dirname + '/../locales',
+        cookie: 'lang'
+    });
+    app.use(cookieParser());
+    app.use(i18n.init);
 
-  app.use(session({
-    secret: 'somesecrettokenhere',
-    resave: false,
-    saveUninitialized: false
-  }));
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({
-    extended: true
-  }));
-  app.use(flash());
+    app.use(session({
+        secret: 'somesecrettokenhere',
+        resave: false,
+        saveUninitialized: false
+    }));
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
+    app.use(flash());
 
-  // i18n cookie and locals
-  app.use(function(req, res, next) {
-    if (typeof req.query.lang === 'string') {
-      res.cookie('lang', req.query.lang, {
-        maxAge: 900000,
-        httpOnly: true
-      });
-      req.setLocale(req.query.lang);
-      res.locals.locale = req.query.lang;
-    }
-    next();
-  });
+    // i18n cookie and locals
+    app.use(function (req, res, next) {
+        if (typeof req.query.lang === 'string') {
+            res.cookie('lang', req.query.lang, {
+                maxAge: 900000,
+                httpOnly: true
+            });
+            req.setLocale(req.query.lang);
+            res.locals.locale = req.query.lang;
+        }
+        next();
+    });
 
-  // Public dir to locals middleware.
-  app.use(function(req, res, next) {
+    // Public dir to locals middleware.
+    app.use(function (req, res, next) {
+        if (CURRENT_ENV === DEV_ENV) {
+            res.locals.publicPrefix = '/client';
+        } else {
+            res.locals.publicPrefix = '/build';
+        }
+        next();
+    });
+
+    // APP URL
+    app.use(function (req, res, next) {
+        APP_HOST = req.protocol + '://' + req.get('host');
+        app.locals.APP_HOST = APP_HOST;
+        next();
+    });
+
+    // Public folder setup.
     if (CURRENT_ENV === DEV_ENV) {
-      res.locals.publicPrefix = '/client';
+        app.use('/bower_components', express.static(path.join(__dirname, '../bower_components'), {
+            redirect: false
+        }));
+        app.use('/client', express.static(path.join(__dirname, '../client'), {
+            redirect: false
+        }));
+        app.use('/build', express.static(path.join(__dirname, '../build'), {
+            redirect: false
+        }));
+        app.use('/', express.static(path.join(__dirname, '../data')));
     } else {
-      res.locals.publicPrefix = '/build';
+        app.use('/build', express.static(path.join(__dirname, '../build'), {
+            redirect: false
+        }));
+        app.use('/', express.static(path.join(__dirname, '../data')));
     }
-    next();
-  });
 
-  // APP URL
-  app.use(function(req, res, next) {
-    APP_HOST = req.protocol + '://' + req.get('host');
-    app.locals.APP_HOST = APP_HOST;
-    next();
-  });
-
-  // Public folder setup.
-  if (CURRENT_ENV === DEV_ENV) {
-    app.use('/bower_components', express.static(path.join(__dirname, '../bower_components'), {
-      redirect: false
-    }));
-    app.use('/client', express.static(path.join(__dirname, '../client'), {
-      redirect: false
-    }));
-    app.use('/build', express.static(path.join(__dirname, '../build'), {
-      redirect: false
-    }));
-    app.use('/', express.static(path.join(__dirname, '../data')));
-  } else {
-    app.use('/build', express.static(path.join(__dirname, '../build'), {
-      redirect: false
-    }));
-    app.use('/', express.static(path.join(__dirname, '../data')));
-  }
-
-  router.setup(app);
+    router.setup(app);
 };
 
 /**
  * Database connection.
  */
-var dbConnect = function() {
-  mongoose.connect(DB_URL, function(err) {
-    if (err) {
-      console.log('MongoDB: Connecting error : ' + err);
-    } else {
-      console.log('MongoDB: Succeeded connected!');
-    }
-  });
+var dbConnect = function () {
+    mongoose.connect(DB_URL, function (err) {
+        if (err) {
+            console.log('MongoDB: Connecting error : ' + err);
+        } else {
+            console.log('MongoDB: Succeeded connected!');
+        }
+    });
 };
 
 module.exports = {
-  CURRENT_ENV: CURRENT_ENV,
-  port: port,
-  dbConnect: dbConnect,
-  appSetup: appSetup
+    CURRENT_ENV: CURRENT_ENV,
+    port: port,
+    dbConnect: dbConnect,
+    appSetup: appSetup
 };

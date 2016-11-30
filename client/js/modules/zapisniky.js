@@ -1,5 +1,9 @@
 let video;
 let form;
+let days;
+let hours;
+let minutes;
+let seconds;
 
 let getRandomNumber = function (from, to) {
     return Math.floor(Math.random() * to) + from;
@@ -54,7 +58,39 @@ let formSetup = function () {
 };
 
 let setTimer = function() {
+    let daysVal = Number(days.innerHTML);
+    let hoursVal = Number(hours.innerHTML);
+    let minutesVal = Number(minutes.innerHTML);
+    let secondsVal = Number(seconds.innerHTML);
 
+
+    if (secondsVal > 0) {
+        secondsVal = secondsVal - 1;
+    } else {
+        secondsVal = 59;
+        if (minutesVal > 0) {
+            minutesVal = minutesVal - 1;
+        } else {
+            minutesVal = 59;
+            if (hoursVal > 0) {
+                hoursVal = hoursVal - 1;
+            } else {
+                hoursVal = 23;
+                if (daysVal > 0) {
+                    daysVal = daysVal - 1;
+                } else {
+                    daysVal = 0;
+                }
+            }
+        }
+    }
+
+    days.innerHTML = (daysVal < 10) ? `0${daysVal}` : daysVal;
+    hours.innerHTML = (hoursVal < 10) ? `0${hoursVal}` : hoursVal;
+    minutes.innerHTML = (minutesVal < 10) ? `0${minutesVal}` : minutesVal;
+    seconds.innerHTML = (secondsVal < 10) ? `0${secondsVal}` : secondsVal;
+
+    setTimeout(setTimer, 1000);
 };
 
 
@@ -75,6 +111,10 @@ export default class Zapisniky {
         }
 
         form = document.getElementById('form-wrapper');
+        days = document.getElementById('days');
+        hours = document.getElementById('hours');
+        minutes = document.getElementById('minutes');
+        seconds = document.getElementById('seconds');
         let heroes = document.getElementsByClassName('zapisnik-hrdinovia__hrdina');
         let moneyCounts = document.getElementsByClassName('zapisnik-video__money');
 

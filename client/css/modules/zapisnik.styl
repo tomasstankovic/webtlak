@@ -64,6 +64,10 @@
   background #050505
   color #fff
 
+  @media(max-width: 360px) {
+    padding: 60px 0;
+  }
+
 .zapisnik-video__wrapper
   position: relative;
   width: 800px;
@@ -131,7 +135,7 @@
     background: #ff0;
     text-shadow: none;
 
-    @media(max-width: 900px) {
+    @media (max-width: 900px) {
       display: none !important;
     }
   }
@@ -140,11 +144,10 @@
     display: block;
   }
 
-
   @media (max-width: 600px) {
     &:nth-child(4),
     &:nth-child(5),
-    &:nth-child(6){
+    &:nth-child(6) {
       display: none;
     }
   }
@@ -164,6 +167,10 @@
     .zapisnik__button {
       display: none;
     }
+  }
+
+  @media (max-width: 460px) {
+    height: auto;
   }
 
   &.fixed {
@@ -187,6 +194,20 @@
   font-size: 30px;
   font-weight: 700;
   color: #000;
+
+  @media (max-width: 460px) {
+    position: relative;
+    right: initial;
+    display: block;
+    left: initial;
+    top: initial;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  @media (max-width: 360px) {
+    margin-bottom: 10px;
+  }
 
 .zapisnik__button
   color #fff
@@ -229,6 +250,30 @@
     right: 20px;
   }
 
+  @media (max-width: 600px) {
+    top: 28px;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: right;
+  }
+
+  @media (max-width: 460px) {
+    position: relative;
+    right: initial;
+    display: block;
+    top: initial;
+    margin: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 360px) {
+    margin-bottom: 0;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
   .col
     display inline-block
     margin: 0 4px;
@@ -245,6 +290,12 @@
     line-height 11px
     padding-left: 5px;
 
+    @media (max-width: 600px) {
+      font-size: 10px;
+      line-height: 10px;
+      padding: 0;
+    }
+
 .zapisnik-mobile-button
   padding 60px 100px
   padding-bottom 10px
@@ -253,6 +304,10 @@
 
   @media (max-width: 900px) {
     display: block;
+  }
+
+  @media(max-width: 360px) {
+    padding: 20px 60px;
   }
 
 .zapisnik-hrdinovia

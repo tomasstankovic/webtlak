@@ -93,8 +93,10 @@ router.post('/zachran-zapisnik', function (req, res) {
 
     newOrder.save(function(err, record) {
         if (err) {
-            console.log(err);
-            return next(err);
+            //console.log(err);
+            console.log('Form required fields must be filled.');
+            res.redirect('/zachran-zapisnik?hero=false');
+            return true;
         }
 
         res.redirect('/zachran-zapisnik?hero=true');

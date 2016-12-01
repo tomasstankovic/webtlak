@@ -50,8 +50,8 @@ router.get('/vytlak-refresh', function (req, res) {
  */
 router.get('/zachran-zapisnik', function (req, res) {
     let today = new Date();
-    let start = new Date(2016, 11, 1);
-    let end = new Date(2016, 11, 8);
+    let start = new Date(2016, 11, 1, 19);
+    let end = new Date(2016, 11, 8, 19);
     let diff = new Date(end.getTime() - today.getTime());
     let days = diff.getUTCDate() - 1;
     let hours = diff.getUTCHours();

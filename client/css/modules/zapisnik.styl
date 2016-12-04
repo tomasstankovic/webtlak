@@ -13,6 +13,14 @@
   position: relative;
   top: -7px;
   left: -9px;
+
+  @media(max-width: 750px) {
+    font-size: 80px;
+  }
+
+  @media(max-width: 500px) {
+    font-size: 50px;
+  }
 }
 
 .zapisnik-share {
@@ -21,6 +29,10 @@
   color: #2717ff;
   float: left;
   font-size: 30px;
+
+  @media(max-width: 750px) {
+    top: 0;
+  }
 }
 
 .zapisnik-intro__text
@@ -183,7 +195,7 @@
   top 0
   left 0
   display block
-  height 100px
+  height 100%
   background #2717ff
 
 .zapisnik-sticky__logo
@@ -307,7 +319,12 @@
   }
 
   @media(max-width: 360px) {
-    padding: 20px 60px;
+    padding: 20px 0;
+    text-align: center;
+
+    a {
+      display: inline-block;
+    }
   }
 
 .zapisnik-hrdinovia
@@ -407,6 +424,7 @@
     font-size 20px
     font-weight 400
     color #000
+    -webkit-appearance: none;
 
     &:focus
       outline none
@@ -541,4 +559,8 @@ label:hover:before {
 .zapisnik-footer {
   padding: 40px 20px;
   text-align: center;
+}
+
+input {
+  -webkit-appearance: none;
 }

@@ -1,8 +1,6 @@
 /**
  * Main app start point.
  */
-require('@risingstack/trace');
-
 var express = require('express');
 
 var app = express();

@@ -12,7 +12,7 @@ var express = require('express'),
  */
 router.get('/', function (req, res) {
     res.render('static/index', {
-        FB_EVENT_URL: 'https://www.facebook.com/events/1745437129118951/',
+        FB_EVENT_URL: 'https://www.facebook.com/events/1803063593353688/',
         title: null
     });
 });

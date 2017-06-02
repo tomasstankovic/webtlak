@@ -14,7 +14,6 @@ var gulp = require('gulp'),
   shell = require('gulp-shell'),
   size = require('gulp-size'),
   stylus = require('gulp-stylus'),
-  git = require('gulp-git'),
   pngquant = require('imagemin-pngquant'),
   webpack = require('gulp-webpack');
 
@@ -107,23 +106,6 @@ gulp.task('webpack', function() {
     .pipe(gulp.dest('./build/js/'));
 });
 
-gulp.task('git-commit', function() {
-  var packageJSON = require('./package.json');
-  return gulp.src(['./build/*', './package.json'])
-    .pipe(git.add({
-      args: '-A'
-    }))
-    .pipe(git.commit('Release v' + packageJSON.version));
-});
-
-gulp.task('git-push', function() {
-  return git.push('origin', 'master', function(err) {
-    if (err) {
-      throw err;
-    }
-    process.exit();
-  });
-});
 
 gulp.task('bump', function() {
   return gulp.src(['./package.json'])
@@ -149,7 +131,7 @@ gulp.task('release', function() {
   console.log('hovno');
 
   if (typeof VERSION !== 'undefined') {
-    runSequence('clean', 'stylus', 'test', 'webpack', 'imagemin', 'bump', 'git-commit', 'git-push');
+    runSequence('clean', 'stylus', 'test', 'webpack', 'imagemin', 'bump');
   } else {
     console.log('SORRY, app --version parameter missing.');
   }

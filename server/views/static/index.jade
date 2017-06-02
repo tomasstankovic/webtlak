@@ -5,22 +5,25 @@ block content
     div#intro__box.intro__box
       h1.intro__heading(data-text='WEBtlak*') WEBtlak*
       h2.intro__subheading * Dizajn / Technológie / Budúcnosť
-      a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #12
+      //a.intro__version(href='#{FB_EVENT_URL}' target='_blank') #12
       img.intro__logo(src='/build/img/logo@2x.png')
       br
-      a.intro__href(href='#{FB_EVENT_URL}' target='_blank')
-        span.intro__date 20.4.2017
+      a.intro__href(href='#archive')
+        span.intro__date ĎAKUJEME
         br
-        span.intro__place Záhrada CNK, Banská Bystrica
+        span.intro__place Videá nájdete v našom YT archíve.
+        //span.intro__date 20.4.2017
+        //br
+        //span.intro__place Záhrada CNK, Banská Bystrica
       a.intro__fb(href='#{FB_EVENT_URL}' target='_blank') facbook.com/webtlak
 
-    div.intro__speakers
-      a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
-        span.intro__speaker-title Mobilné aplikácie v JavaScripte
-        span.intro__speaker-name Tomáš Stankovič
-      a.intro__speaker.right(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -200,  "smoothness": 10}')
-        span.intro__speaker-title Sketch: moderný nástroj dizajnéra
-        span.intro__speaker-name Tomáš Pinka
+    //div.intro__speakers
+    //  a.intro__speaker.left(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -150, "smoothness": 10}')
+    //    span.intro__speaker-title Mobilné aplikácie v JavaScripte
+    //    span.intro__speaker-name Tomáš Stankovič
+    //  a.intro__speaker.right(href='#{FB_EVENT_URL}' target='_blank' data-parallax='{"y": -200,  "smoothness": 10}')
+    //    span.intro__speaker-title Sketch: moderný nástroj dizajnéra
+    //    span.intro__speaker-name Tomáš Pinka
 
   div.about
     p.about__text.
@@ -28,10 +31,26 @@ block content
       <br/><br/>
       <a href='http://eepurl.com/bCWFvb' target='_blank' class='about__newsletter'>—Dostávaj tlak pravidelne do mailu</a>
 
-  div.archive__wrapper
+  div.archive__wrapper#archive
     div.archive
 
       div.archive__item(data-parallax='{"y": -150, "smoothness": 10}')
+        p.archive__item-number #12
+        span.archive__item-limiter
+        p.archive__item-date 20.4.2017
+        p.archive__item-place Záhrada CNK, Banská Bystrica
+
+        a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=uMSJTaid098')
+          div.archive__item-speaker-icon
+          span.archive__item-speaker-title Mobilné aplikácie v JavaScripte
+          span.archive__item-speaker-name Tomáš Stankovič
+
+        a.archive__item-speaker.video(href='https://www.youtube.com/watch?v=-MSalibXz5Y')
+          div.archive__item-speaker-icon
+          span.archive__item-speaker-title Sketch: moderný nástroj dizajnéra
+          span.archive__item-speaker-name Tomáš Pinka
+
+      div.archive__item(data-parallax='{"y": -100, "smoothness": 10}')
         p.archive__item-number #11
         span.archive__item-limiter
         p.archive__item-date 3.3.2017
@@ -219,7 +238,5 @@ block content
     div.partners
       a.partners__item(href='http://www.fpv.umb.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
         img.partners__item-img.size-square(src='/build/img/partners/fpv@2x.png')
-      a.partners__item(href='http://www.startitup.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
-        img.partners__item-img.size-square(src='/build/img/partners/startitup@2x.png')
       a.partners__item(href='http://bbonline.sk/' target='_blank' data-parallax='{"y": -50, "smoothness": 10}')
         img.partners__item-img.size-rect(src='/build/img/partners/bbonline@2x.png')

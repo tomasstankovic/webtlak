@@ -1,8 +1,7 @@
 /**
  * Helpers file.
  */
-var helpers = {};
-
+const helpers = {};
 
 /**
  * getRandomNumber from interval.

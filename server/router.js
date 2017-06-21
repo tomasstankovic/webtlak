@@ -1,14 +1,14 @@
 /**
  * App router.
  */
-var sitemap = require('express-sitemap');
+const sitemap = require('express-sitemap');
 
-var setup = function(app) {
-  var staticController = require('./controllers/staticController');
+let setup = function (app) {
+  const staticController = require('./controllers/staticController');
 
   app.use('/', staticController);
 
-  var map = sitemap({
+  const map = sitemap({
     url: 'www.webtlak.sk',
     sitemap: 'data/sitemap.xml',
     robots: 'data/robots.txt',
@@ -27,7 +27,6 @@ var setup = function(app) {
 
   map.generate(app);
   map.XMLtoFile();
-
 };
 
 module.exports.setup = setup;

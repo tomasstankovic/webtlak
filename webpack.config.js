@@ -18,7 +18,7 @@ module.exports = {
   output: {
     filename: 'build.js'
   },
-  plugins: (function() {
+  plugins: (function () {
     return [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurenceOrderPlugin(),

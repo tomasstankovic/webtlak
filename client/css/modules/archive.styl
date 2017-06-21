@@ -1,139 +1,158 @@
-$tabletBreak = 630px
-$mobileBreak = 390px
-$smallMobileBreak = 300px
+$tabletBreak = 630px;
+$mobileBreak = 390px;
+$smallMobileBreak = 300px;
 
-.archive__wrapper
-  background url('../img/archiv_bg@2x.png') no-repeat
-  background-size 63%
-  margin-top 200px
-  padding-top 170px
+.archive__wrapper {
+  background: url('../img/archiv_bg@2x.png') no-repeat;
+  background-size: 63%;
+  margin-top: 200px;
+  padding-top: 170px;
 
-  @media(max-width: $mobileBreak)
-    margin-top 100px
-    padding-top 70px
+  @media (max-width: $mobileBreak) {
+    margin-top: 100px;
+    padding-top: 70px;
+  }
+}
 
-.archive
-  width $width
-  margin 0 auto
+.archive {
+  width: $width;
+  margin: 0 auto;
+}
 
-.archive__item
-  float left
-  width 50%
-  box-sizing border-box
-  margin-bottom 20px
-  min-height 500px
-  padding 0 10px
+.archive__item {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  min-height: 500px;
+  padding: 0 10px;
 
-  @media(max-width: 1000px)
-    width 100%
-    margin-bottom 0
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
 
+.archive__item-number {
+  font-size: 72px;
+  line-height: 57px;
 
-.archive__item-number
-  font-size 72px
-  line-height 57px
+  @media (max-width: $tabletBreak) {
+    font-size: 62px;
+    line-height: 47px;
+  }
 
-  @media(max-width: $tabletBreak)
-    font-size 62px
-    line-height 47px
+  @media (max-width: $mobileBreak) {
+    font-size: 52px;
+    line-height: 37px;
+  }
+}
 
-  @media(max-width: $mobileBreak)
-    font-size 52px
-    line-height 37px
+.archive__item-limiter {
+  display: block;
+  width: 100%;
+  height: 20px;
+  background: $colorDark;
+  margin: 25px 0;
+}
 
+.archive__item-date {
+  font-size: 48px;
+  line-height: 43px;
+}
 
-.archive__item-limiter
-  display block
-  width 100%
-  height 20px
-  background $colorDark
-  margin 25px 0
+@media (max-width: $tabletBreak) {
+font-size: 38px;
+line-height: 33px;
+}
 
+.archive__item-place {
+  font-size: 24px;
+  line-height: 24px;
 
-.archive__item-date
-  font-size 48px
-  line-height 43px
+  @media (max-width: $tabletBreak) {
+    font-size: 20px;
+    line-height: 20px;
+  }
 
-  @media(max-width: $tabletBreak)
-    font-size 38px
-    line-height 33px
+  @media (max-width: $mobileBreak) {
+    font-size: 17px;
+    line-height: 17px;
+  }
+}
 
+.archive__item-speaker {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  padding-left: 80px;
+  min-height: 55px;
+  box-sizing: border-box;
 
-.archive__item-place
-  font-size 24px
-  line-height 24px
+  @media (max-width: 530px) {
+    padding-left: 0;
+  }
 
-  @media(max-width: $tabletBreak)
-    font-size 20px
-    line-height 20px
+  &.video {
+    span {
+      color: #000;
+    }
 
-  @media(max-width: $mobileBreak)
-    font-size 17px
-    line-height 17px
+    .archive__item-speaker-icon {
+      background: url('/build/img/youtube@2x.png') no-repeat;
+      background-position: 0 0;
+      background-size: 62px 86px;
+      opacity: 1;
+    }
 
+    &:hover {
+      background: $colorPink;
+      text-decoration: none;
 
-.archive__item-speaker
-  position relative
-  display block
-  margin-bottom 10px
-  padding 5px
-  padding-left 80px
-  min-height 55px
-  box-sizing border-box
+      span {
+        color: $colorBlue;
+      }
 
-  @media(max-width: 530px)
-    padding-left 0
+      .archive__item-speaker-icon {
+        background-position: 0 -43px;
+      }
+    }
+  }
 
-  &.video
-    span
-      color #000
+  &:nth-child(5) {
+    margin-top: 40px;
+  }
+}
 
-    .archive__item-speaker-icon
-      background url('/build/img/youtube@2x.png') no-repeat
-      background-position 0 0
-      background-size 62px 86px
-      opacity 1
+.archive__item-speaker-icon {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 62px;
+  height: 43px;
+  margin-top: -22px;
+  background: url('/build/img/video-off@2x.png') no-repeat;
+  background-position: 0 0;
+  background-size: 62px 43px;
 
-    &:hover
-      background $colorPink
-      text-decoration none
+  @media (max-width: 530px) {
+    display: none;
+  }
+}
 
-      span
-        color $colorBlue
+.archive__item-speaker-title {
+  display: block;
+  font-size: 30px;
+  line-height: 35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-      .archive__item-speaker-icon
-        background-position 0 -43px
-
-  &:nth-child(5)
-    margin-top 40px
-
-
-.archive__item-speaker-icon
-  position absolute
-  top 50%
-  left 5px
-  width 62px
-  height 43px
-  margin-top -22px
-  background url('/build/img/video-off@2x.png') no-repeat
-  background-position 0 0
-  background-size 62px 43px
-
-  @media(max-width: 530px)
-    display none
-
-
-.archive__item-speaker-title
-  display block
-  font-size 30px
-  line-height 35px
-  overflow hidden
-  text-overflow ellipsis
-  white-space nowrap
-
-
-.archive__item-speaker-name
-  display block
-  font-size 18px
-  line-height 18px
-  font-weight 500
+.archive__item-speaker-name {
+  display: block;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 500;
+}

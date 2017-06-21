@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
   args = require('yargs').argv,
   autoprefixer = require('gulp-autoprefixer'),
   bump = require('gulp-bump'),
@@ -17,9 +17,9 @@ var gulp = require('gulp'),
   pngquant = require('imagemin-pngquant'),
   webpack = require('gulp-webpack');
 
-var VERSION;
+let VERSION;
 
-var paths = {
+const paths = {
   scriptsFrontend: ['./client/js/**/*.js'],
   scripts: [
     './client/js/**/*.js',
@@ -32,16 +32,16 @@ var paths = {
   css: ['./build/css/app.css']
 };
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   return gulp.src(['./build/js', './build/css', './build/deps.js'], {
-      read: false
-    })
+    read: false
+  })
     .pipe(rimraf({
       force: true
     }));
 });
 
-gulp.task('imagemin', function() {
+gulp.task('imagemin', function () {
   return gulp.src(paths.images)
     .pipe(imagemin({
       progressive: true,
@@ -50,12 +50,12 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest('./build/img'));
 });
 
-gulp.task('image-copy', function() {
+gulp.task('image-copy', function () {
   return gulp.src(paths.images)
     .pipe(gulp.dest('./build/img'));
 });
 
-gulp.task('stylus', function() {
+gulp.task('stylus', function () {
   return gulp.src(paths.stylus)
     .pipe(plumber())
     .pipe(stylus({
@@ -79,35 +79,35 @@ gulp.task('set-ulimit', shell.task([
   'ulimit -n 10240'
 ]));
 
-gulp.task('test', function() {
+gulp.task('test', function () {
   return gulp.src('test/**/*.test.js', {
-      read: false
-    })
+    read: false
+  })
     .pipe(mocha({
       reporter: 'spec'
     }));
 });
 
-gulp.task('test-deployed', function() {
+gulp.task('test-deployed', function () {
   return gulp.src('test/**/*.test.js', {
-      read: false
-    })
+    read: false
+  })
     .pipe(mocha({
       reporter: 'spec'
     }))
-    .once('end', function() {
+    .once('end', function () {
       process.exit();
     });
 });
 
-gulp.task('webpack', function() {
+gulp.task('webpack', function () {
   return gulp.src('./client/js/main.js')
     .pipe(webpack(require("./webpack.config.js")))
     .pipe(gulp.dest('./build/js/'));
 });
 
 
-gulp.task('bump', function() {
+gulp.task('bump', function () {
   return gulp.src(['./package.json'])
     .pipe(bump({
       type: VERSION
@@ -117,7 +117,7 @@ gulp.task('bump', function() {
 
 gulp.task('dev', ['stylus', 'test']);
 
-gulp.task('build', function() {
+gulp.task('build', function () {
   runSequence('clean', 'stylus', 'test', 'webpack', 'imagemin');
 });
 
@@ -125,10 +125,8 @@ gulp.task('build', function() {
  *  gulp release --version major|minor|patch
  *  gulp release -v major|minor|patch
  */
-gulp.task('release', function() {
+gulp.task('release', function () {
   VERSION = args.v || args.version;
-
-  console.log('hovno');
 
   if (typeof VERSION !== 'undefined') {
     runSequence('clean', 'stylus', 'test', 'webpack', 'imagemin', 'bump');
@@ -137,7 +135,7 @@ gulp.task('release', function() {
   }
 });
 
-gulp.task('start-server', function() {
+gulp.task('start-server', function () {
   nodemon({
     script: 'server/app.js',
     exec: 'node',

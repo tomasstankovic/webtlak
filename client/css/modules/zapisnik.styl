@@ -1,10 +1,11 @@
-.zapisnik-intro
-  position relative
-  margin-bottom 200px;
+.zapisnik-intro {
+  position: relative;
+  margin-bottom: 200px;
 
   @media (max-width: 600px) {
     margin-bottom: 100px;
   }
+}
 
 .zapisnik-thanks {
   float: left;
@@ -14,11 +15,11 @@
   top: -7px;
   left: -9px;
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     font-size: 80px;
   }
 
-  @media(max-width: 500px) {
+  @media (max-width: 500px) {
     font-size: 50px;
   }
 }
@@ -30,18 +31,18 @@
   float: left;
   font-size: 30px;
 
-  @media(max-width: 750px) {
+  @media (max-width: 750px) {
     top: 0;
   }
 }
 
-.zapisnik-intro__text
-  font-size 48px
-  line-height 67px
-  padding 150px 20px
-  margin 0 auto
-  width 1000px
-  box-sizing border-box
+.zapisnik-intro__text {
+  font-size: 48px;
+  line-height: 67px;
+  padding: 150px 20px;
+  margin: 0 auto;
+  width: 1000px;
+  box-sizing: border-box;
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -65,33 +66,32 @@
     font-size: 22px;
     line-height: 30px;
   }
+}
 
-.zapisnik-intro__scroll
-  color #2717ff
-
-.zapisnik-video
+.zapisnik-video {
   overflow: hidden;
-  position relative
-  padding 80px 0
-  background #050505
-  color #fff
+  position: relative;
+  padding: 80px 0;
+  background: #050505;
+  color: #fff;
 
-  @media(max-width: 360px) {
+  @media (max-width: 360px) {
     padding: 60px 0;
   }
+}
 
-.zapisnik-video__wrapper
+.zapisnik-video__wrapper {
   position: relative;
   width: 800px;
   height: 480px;
-  margin 0 auto
+  margin: 0 auto;
 
   @media (max-width: 800px) {
     width: 90%;
     height: auto;
   }
 
-  video
+  video {
     display block
     width: 800px;
     height: 480px;
@@ -100,6 +100,7 @@
       width: 100%;
       height: auto;
     }
+  }
 
   .zapisnik__button {
     z-index: 2;
@@ -107,6 +108,7 @@
     top: 50%;
     right: -200px;
   }
+}
 
 .zapisnik-video__live {
   position: absolute;
@@ -122,7 +124,7 @@
   text-transform: uppercase;
 }
 
-.zapisnik-video__money
+.zapisnik-video__money {
   z-index: 1;
   position: absolute;
   font-size: 72px;
@@ -163,17 +165,18 @@
       display: none;
     }
   }
+}
 
-.zapisnik-sticky
-  z-index 10
-  position relative
-  top 0
-  left 0
-  height 100px
-  width 100%
-  box-sizing border-box
-  padding 20px 40px
-  background #fff
+.zapisnik-sticky {
+  z-index: 10;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  background: #fff;
 
   @media (max-width: 900px) {
     .zapisnik__button {
@@ -188,21 +191,23 @@
   &.fixed {
     position: fixed;
   }
+}
 
-.zapisnik-sticky__timeline
-  z-index 0
-  position absolute
-  top 0
-  left 0
-  display block
-  height 100%
-  background #2717ff
+.zapisnik-sticky__timeline {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  background: #2717ff;
+}
 
-.zapisnik-sticky__logo
-  z-index 1
-  position absolute
-  top 33px;
-  left 30px
+.zapisnik-sticky__logo {
+  z-index: 1;
+  position: absolute;
+  top: 33px;
+  left: 30px;
   font-size: 30px;
   font-weight: 700;
   color: #000;
@@ -220,42 +225,46 @@
   @media (max-width: 360px) {
     margin-bottom: 10px;
   }
+}
 
-.zapisnik__button
-  color #fff
-  background $colorPink
-  text-align center
-  text-transform uppercase
+.zapisnik__button {
+  color: #fff;
+  background: $colorPink;
+  text-align: center;
+  text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
-  display block
+  display: block;
   width: 280px;
   height: 80px;
-  line-height 80px
+  line-height: 80px;
 
-  &.sticky
-    z-index 1
-    position absolute
-    top 10px
-    right 10px
+  &.sticky {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
 
-  &:hover
-    background #FF0
-    color #000
+  &:hover {
+    background: #FF0;
+    color: #000;
+  }
+}
 
-.zapisnik-sticky__time
-  z-index 1
-  position absolute
-  top 14px
-  left 50%
-  margin-left -150px
-  color #000
-  font-size 44px
-  font-weight 700
-  line-height 50px
-  text-transform uppercase
-  width 300px
-  text-align center
+.zapisnik-sticky__time {
+  z-index: 1;
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  margin-left: -150px;
+  color: #000;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 50px;
+  text-transform: uppercase;
+  width: 300px;
+  text-align: center;
 
   @media (max-width: 900px) {
     left: initial;
@@ -286,14 +295,16 @@
     line-height: 34px;
   }
 
-  .col
-    display inline-block
+  .col {
+    display: inline-block;
     margin: 0 4px;
 
-    div
-      display inline
+    div {
+      display: inline;
+    }
+  }
 
-  span
+  span {
     text-align left
     display block
     color #959595
@@ -307,10 +318,12 @@
       line-height: 10px;
       padding: 0;
     }
+  }
+}
 
-.zapisnik-mobile-button
-  padding 60px 100px
-  padding-bottom 10px
+.zapisnik-mobile-button {
+  padding: 60px 100px;
+  padding-bottom: 10px;
   display: none;
   overflow: hidden;
 
@@ -318,7 +331,7 @@
     display: block;
   }
 
-  @media(max-width: 360px) {
+  @media (max-width: 360px) {
     padding: 20px 0;
     text-align: center;
 
@@ -326,32 +339,34 @@
       display: inline-block;
     }
   }
+}
 
-.zapisnik-hrdinovia
-  position relative
-  width 100%
-  height 1000px
-  box-sizing border-box
-  padding 100px
-  overflow hidden
+.zapisnik-hrdinovia {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+  box-sizing: border-box;
+  padding: 100px;
+  overflow: hidden;
 
   @media (max-width: 600px) {
     height: 700px;
   }
+}
 
-.zapisnik-hrdinovia__bg
-  position absolute
-  top 50%
-  left -7px
-  width 100%
-  margin-top -70px
-  text-align left
-  opacity 0.1
-  font-family Montserrat
-  font-size 160px
-  font-weight 700
-  line-height 140px
-  text-transform uppercase
+.zapisnik-hrdinovia__bg {
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  width: 100%;
+  margin-top: -70px;
+  text-align: left;
+  opacity: 0.1;
+  font-family: Montserrat;
+  font-size: 160px;
+  font-weight: 700;
+  line-height: 140px;
+  text-transform: uppercase;
 
   @media (max-width: 1000px) {
     font-size: 150px;
@@ -372,12 +387,13 @@
     font-size: 80px;
     line-height: 70px;
   }
+}
 
-.zapisnik-hrdinovia__hrdina
-  position absolute
-  font-size 48px
-  font-weight 700
-  line-height 64px
+.zapisnik-hrdinovia__hrdina {
+  position: absolute;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 64px;
   white-space: nowrap;
 
   @media (max-width: 850px) {
@@ -389,72 +405,82 @@
     font-size: 28px;
     line-height: 39px;
   }
+}
 
-.zapisnik-form-wrapper
-  background #050505
-  color #fff
-  padding-top 60px
-  padding-bottom 120px
+.zapisnik-form-wrapper {
+  background: #050505;
+  color: #fff;
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
 
-.zapisnik-form__inner
-  width 100%
-  box-sizing border-box
-  padding 0 20px
-  max-width 800px
-  margin 0 auto
+.zapisnik-form__inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
 
-  h3
-    font-size 30px
-    font-weight 700
-    text-align center
+  h3 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+  }
+}
 
-.zapisnik-form
-  overflow hidden
-  margin-left -5px
-  margin-right -5px
+.zapisnik-form {
+  overflow: hidden;
+  margin-left: -5px;
+  margin-right: -5px;
 
   input,
-  textarea
-    width 100%
-    height 60px
-    margin-bottom 10px
-    border none
-    padding 20px
-    box-sizing border-box
-    font-size 20px
-    font-weight 400
-    color #000
+  textarea {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
     -webkit-appearance: none;
 
-    &:focus
-      outline none
+    &:focus {
+      outline: none;
+    }
+  }
 
-  textarea
-    height 200px
+  textarea {
+    height: 200px;
     resize: none;
+  }
 
-  input.zapisnik__button
-    color #fff
-    height 80px
-    font-size 14px
-    line-height 19px
-    padding 0 20px
-    margin-left 5px
-    margin-right 5px
+  input.zapisnik__button {
+    color: #fff;
+    height: 80px;
+    font-size: 14px;
+    line-height: 19px;
+    padding: 0 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     white-space: normal;
 
-    &:hover
-      color #000
+    &:hover {
+      color: #000;
+    }
 
-    &[disabled]
-      opacity .3
+    &[disabled] {
+      opacity: .3;
 
       &:hover {
         background: $colorPink;
         color: #fff;
       }
+    }
+  }
+}
 
-/* Base for label styling */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
@@ -468,7 +494,6 @@
   cursor: pointer;
 }
 
-/* checkbox aspect */
 [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
@@ -480,7 +505,6 @@
   background: #f8f8f8;
 }
 
-/* checked mark aspect */
 [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '👍';
@@ -491,7 +515,6 @@
   color: #FF0;
 }
 
-/* checked mark aspect changes */
 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0;
   transform: scale(0);
@@ -502,7 +525,6 @@
   transform: scale(1);
 }
 
-/* disabled checkbox */
 [type="checkbox"]:disabled:not(:checked) + label:before,
 [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
@@ -518,12 +540,10 @@
   color: #aaa;
 }
 
-/* accessibility */
 [type="checkbox"]:checked:focus + label:before,
 [type="checkbox"]:not(:checked):focus + label:before {
 }
 
-/* hover style just for information */
 label:hover:before {
 }
 
@@ -534,11 +554,7 @@ label:hover:before {
   margin-left: 5px;
   margin-right: 5px;
   width: 100%;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Chrome/Safari/Opera */
-  -khtml-user-select: none; /* Konqueror */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-touch-callout: none;
   user-select: none;
 
   label {

@@ -1,324 +1,376 @@
-$tabletBreak = 630px
-$mobileBreak = 390px
-$smallMobileBreak = 300px
+$tabletBreak = 630px;
+$mobileBreak = 390px;
+$smallMobileBreak = 300px;
 
-.intro
-  overflow hidden
-  background url('../img/pattern@2x.png')
-  background-attachment fixed
-  background-size 12px 12px
-  width 100%
-  height 100%
-  min-height 100%
-  box-sizing border-box
-  padding-bottom 100px
+.intro {
+  overflow: hidden;
+  background: url('../img/pattern@2x.png');
+  background-attachment: fixed;
+  background-size: 12px 12px;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 100px;
 
-  @media(max-width: $tabletBreak)
-    padding 2.5%
-    height auto !important
+  @media (max-width: $tabletBreak) {
+    padding: 2.5%;
+    height: auto !important;
+  }
+}
 
+.intro__box {
+  position: relative;
+  left: 50%;
+  width: 800px;
+  height: auto;
+  margin-left: -400px;
+  background: #fff;
+  border: 20px solid $colorDark;
+  box-sizing: border-box;
+  padding: 30px 40px;
+  transition: height 100ms;
 
-.intro__box
-  position relative
-  left 50%
-  width 800px
-  height auto
-  margin-left -400px
-  background #fff
-  border 20px solid $colorDark
-  box-sizing border-box
-  padding 30px 40px
-  transition height 100ms
+  @media (max-width: 860px) {
+    width: 93%;
+    top: 50%;
+    left: 0;
+    margin: 0 auto;
+  }
 
-  @media(max-width: 860px)
-    width 93%
-    top 50%
-    left 0
-    margin 0 auto
+  @media (max-width: $tabletBreak) {
+    position: static;
+    width: 100%;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    padding: 30px;
+  }
 
-  @media(max-width: $tabletBreak)
-    position static
-    width 100%
-    margin-top 0 !important
-    margin-left 0 !important
-    padding 30px
+  @media (max-width: $mobileBreak) {
+    border: 16px solid $colorDark;
+  }
 
-  @media(max-width: $mobileBreak)
-    border 16px solid $colorDark
+  @media (max-width: $smallMobileBreak) {
+    border: 14px solid $colorDark;
+    padding: 20px;
+  }
+}
 
-  @media(max-width: $smallMobileBreak)
-    border 14px solid $colorDark
-    padding 20px
+.intro__heading {
+  color: black;
+  position: relative;
+  font-size: 74px;
+  line-height: 74px;
+  font-weight: 700;
+  width: 300px;
+  margin: 0;
 
+  @media (max-width: $tabletBreak) {
+    font-size: 54px;
+    line-height: 54px;
+    width: 270px;
+  }
 
-.intro__heading
-  color black
-  position relative
-  font-size 74px
-  line-height 74px
-  font-weight 700
-  width 300px
-  margin 0
+  @media (max-width: $mobileBreak) {
+    font-size: 40px;
+    line-height: 40px;
+    width: 200px;
+  }
 
-  @media(max-width: $tabletBreak)
-    font-size 54px
-    line-height 54px
-    width 270px
+  @media (max-width: $smallMobileBreak) {
+    font-size: 30px;
+    line-height: 30px;
+  }
 
-  @media(max-width: $mobileBreak)
-    font-size 40px
-    line-height 40px
-    width 200px
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 4px;
+    text-shadow: -2px 0 $colorPink;
+    top: 0;
+    color: #000;
+    background: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitchOne 8s infinite linear alternate-reverse;
+  }
 
-  @media(max-width: $smallMobileBreak)
-    font-size 30px
-    line-height 30px
-
-  &:after
-    content attr(data-text)
-    position absolute
-    left 4px
-    text-shadow -2px 0 $colorPink
-    top 0
-    color #000
-    background #fff
-    overflow hidden
-    clip rect(0,900px,0,0)
-    animation glitchOne 8s infinite linear alternate-reverse
-
-  &:before
-    content attr(data-text)
-    position absolute
-    left 4px
-    text-shadow -2px 0 $colorBlue
-    top 0
-    color #000
-    background #fff
-    overflow hidden
-    clip rect(0,900px,0,0)
-    animation glitchOne 10s infinite linear
-
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    left: 4px;
+    text-shadow: -2px 0 $colorBlue;
+    top: 0;
+    color: #000;
+    background: #fff;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitchOne 10s infinite linear;
+  }
+}
 
 .intro__subheading
-  font-size 19px
-  line-height 26px
-  margin-top 0
-  margin-bottom 25px
+  font-size: 19px;
+  line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 25px;
 
-  @media(max-width: $tabletBreak)
-    margin-bottom 0
+  @media (max-width: $tabletBreak) {
+    margin-bottom: 0;
+  }
 
-  @media(max-width: 500px)
-    display none
+  @media (max-width: 500px) {
+    display: none;
+  }
 
-  @media(max-width: $mobileBreak)
-    font-size 16px
-    line-height 20px
+  @media (max-width: $mobileBreak) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 
-  @media(max-width: $smallMobileBreak)
-    font-size 14px
-    line-height 18px
+  @media (max-width: $smallMobileBreak) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 
+.intro__version {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 72px;
+  line-height: 72px;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
 
-.intro__version
-  position absolute
-  top 30px
-  right 40px
-  font-size 72px
-  line-height 72px
-  font-weight 700
-  margin 0
-  color #000
+  &:hover {
+    color: $colorBlue;
+    background: $colorPink;
+  }
 
-  &:hover
-    color $colorBlue
-    background $colorPink
+  @media (max-width: $tabletBreak) {
+    position: static;
+    font-size: 54px;
+    line-height: 54px;
+  }
 
-  @media(max-width: $tabletBreak)
-    position static
-    font-size 54px
-    line-height 54px
+  @media (max-width: $mobileBreak) {
+    font-size: 40px;
+    line-height: 40px;
+  }
 
-  @media(max-width: $mobileBreak)
-    font-size 40px
-    line-height 40px
+  @media (max-width: $smallMobileBreak) {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
 
-  @media(max-width: $smallMobileBreak)
-    font-size 30px
-    line-height 30px
+.intro__logo {
+  width: 185px;
+  height: 56px;
 
+  @media (max-width: $tabletBreak) {
+    width: 148px;
+    height: 45px;
+  }
 
-.intro__logo
-  width 185px
-  height 56px
+  @media (max-width: 500px) {
+    margin-top: 20px;
+  }
 
-  @media(max-width: $tabletBreak)
-    width 148px
-    height 45px
+  @media (max-width: $mobileBreak) {
+    width: 118px;
+    height: 36px;
+  }
 
-  @media(max-width: 500px)
-    margin-top 20px
+  @media (max-width: $smallMobileBreak) {
+    width: 94px;
+    height: 29px;
+  }
+}
 
-  @media(max-width: $mobileBreak)
-    width 118px
-    height 36px
-
-  @media(max-width: $smallMobileBreak)
-    width 94px
-    height 29px
-
-
-.intro__fb
-  display block
-  position absolute
-  bottom 30px
-  right 40px
-  width 63px
-  height 63px
-  text-indent -9999px
-  background url('../img/fb@2x.png') 0 0
-  background-size 63px 126px
+.intro__fb {
+  display: block;
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  width: 63px;
+  height: 63px;
+  text-indent: -9999px;
+  background: url('../img/fb@2x.png') 0 0;
+  background-size: 63px 126px;
 
   &:hover,
-  &:active
-    background-position 0 63px
+  &:active {
+    background-position: 0 63px;
+  }
 
-  @media(max-width: $tabletBreak)
-    position static
-    margin-top 10px
-    width 50px
-    height 50px
-    background-size 50px 100px
-    background-position 0 0
+  @media (max-width: $tabletBreak) {
+    position: static;
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 100px;
+    background-position: 0 0;
 
     &:hover,
-    &:active
-      background-position 0 50px
+    &:active {
+      background-position: 0 50px;
+    }
+  }
 
-  @media(max-width: $mobileBreak)
-    margin-top 25px
+  @media (max-width: $mobileBreak) {
+    margin-top: 25px;
+  }
+}
 
-.intro__date
-  font-size 48px
-  line-height 48px
-  font-weight 700
-  color #000
+.intro__date {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
+  color: #000;
 
-  @media(max-width: $tabletBreak)
-    font-size 40px
-    line-height 40px
+  @media (max-width: $tabletBreak) {
+    font-size: 40px;
+    line-height: 40px;
+  }
 
-  @media(max-width: $mobileBreak)
-    font-size 32px
-    line-height 32px
+  @media (max-width: $mobileBreak) {
+    font-size: 32px;
+    line-height: 32px;
+  }
 
-  @media(max-width: $smallMobileBreak)
-    font-size 24px
-    line-height 24px
+  @media (max-width: $smallMobileBreak) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
 
-.intro__place
-  font-size 24px
-  line-height 24px
-  font-weight 700
-  color: #000
+.intro__place {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000;
 
-  @media(max-width: $tabletBreak)
+  @media (max-width: $tabletBreak) {
     font-size 19px
     line-height 26px
-
-  @media(max-width: $mobileBreak)
+  }
+  @media (max-width: $mobileBreak) {
     font-size 15px
     line-height 20px
-
-  @media(max-width: $smallMobileBreak)
+  }
+  @media (max-width: $smallMobileBreak) {
     font-size 14px
     line-height 19px
+  }
+}
 
-.intro__href
-  display inline-block
-  margin-top 100px
+.intro__href {
+  display: inline-block;
+  margin-top: 100px;
 
-  @media(max-width: $tabletBreak)
-    margin-top 80px
+  @media (max-width: $tabletBreak) {
+    margin-top: 80px;
+  }
 
-  @media(max-width: $smallMobileBreak)
-    margin-top 60px
+  @media (max-width: $smallMobileBreak) {
+    margin-top: 60px;
+  }
 
-  &:hover
+  &:hover {
     .intro__date,
-    .intro__place
-      color $colorBlue
-      background $colorPink
+    .intro__place {
+      color: $colorBlue;
+      background: $colorPink;
+    }
+  }
+}
 
-.intro__speakers
-  width $width
-  margin 0 auto
+.intro__speakers {
+  width: $width;
+  margin: 0 auto;
 
-  @media (max-width: $tabletBreak)
-    width 100%
+  @media (max-width: $tabletBreak) {
+    width: 100%;
+  }
+}
 
-.intro__speaker
-  display inline-block
-  color $colorDark
-  background #fff
-  margin 50px 0
-  padding 3px 7px
+.intro__speaker {
+  display: inline-block;
+  color: $colorDark;
+  background: #fff;
+  margin: 50px 0;
+  padding: 3px 7px;
 
-  @media (max-width: $tabletBreak)
-    margin 30px 0
+  @media (max-width: $tabletBreak) {
+    margin: 30px 0;
+  }
 
-  @media (max-width: $mobileBreak)
-    margin 15px 0
+  @media (max-width: $mobileBreak) {
+    margin: 15px 0;
+  }
 
-  &.left
-    text-align left
-    float left
-    clear both
+  &.left {
+    text-align: left;
+    float: left;
+    clear: both;
+  }
 
-  &.right
-    text-align right
-    float right
-    clear both
+  &.right {
+    text-align: right;
+    float: right;
+    clear: both;
+  }
 
-  &:hover
+  &:hover {
     color: $colorBlue;
     background: $colorPink;
     text-decoration: none;
+  }
+}
 
-.intro__speaker-title
-  display block
-  font-size 72px
-  line-height 72px
-  font-weight 700
-  padding 5px
+.intro__speaker-title {
+  display: block;
+  font-size: 72px;
+  line-height: 72px;
+  font-weight: 700;
+  padding: 5px;
 
-  @media (max-width: $tabletBreak)
-    font-size 50px
-    line-height 50px
+  @media (max-width: $tabletBreak) {
+    font-size: 50px;
+    line-height: 50px;
+  }
 
-  @media (max-width: $mobileBreak)
-    font-size 35px
-    line-height 35px
+  @media (max-width: $mobileBreak) {
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
 
-.intro__speaker-name
-  display inline-block
-  font-size 48px
-  line-height 48px
-  font-weight 500
-  padding 5px
+.intro__speaker-name {
+  display: inline-block;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 500;
+  padding: 5px;
 
-  @media (max-width: $tabletBreak)
-    font-size 30px
-    line-height 30px
+  @media (max-width: $tabletBreak) {
+    font-size: 30px;
+    line-height: 30px;
+  }
 
-  @media (max-width: $mobileBreak)
-    font-size 25px
-    line-height 25px
+  @media (max-width: $mobileBreak) {
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
 
-.intro__arrow
-  position fixed
-  bottom 50px
-  left 50%
-  margin-left -49px
-  width 98px
-  height 131px
+.intro__arrow {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -49px;
+  width: 98px;
+  height: 131px;
+}

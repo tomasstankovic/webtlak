@@ -11,7 +11,6 @@ const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const path = require('path');
-const i18n = require('i18n');
 const router = require('./router');
 const pjson = require('../package.json');
 
@@ -34,15 +33,7 @@ let appSetup = function (app) {
   app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
   app.use(compress());
   app.use(methodOverride());
-
-  i18n.configure({
-    locales: ['en', 'sk'],
-    defaultLocale: 'en',
-    directory: __dirname + '/../locales',
-    cookie: 'lang'
-  });
   app.use(cookieParser());
-  app.use(i18n.init);
 
   app.use(session({
     secret: 'somesecrettokenhere',
@@ -54,19 +45,6 @@ let appSetup = function (app) {
     extended: true
   }));
   app.use(flash());
-
-  // i18n cookie and locals
-  app.use(function (req, res, next) {
-    if (typeof req.query.lang === 'string') {
-      res.cookie('lang', req.query.lang, {
-        maxAge: 900000,
-        httpOnly: true
-      });
-      req.setLocale(req.query.lang);
-      res.locals.locale = req.query.lang;
-    }
-    next();
-  });
 
   // Public dir to locals middleware.
   app.use(function (req, res, next) {

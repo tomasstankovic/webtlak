@@ -20,7 +20,7 @@ var DEV_ENV = 'DEVELOPMENT',
     APP_VER = pjson.version,
     APP_HOST,
     port = process.env.PORT || 8080,
-    DB_URL = 'mongodb://webtlak:Tomasko4@ds033976.mlab.com:33976/webtlak-production';
+    DB_URL = process.env.DB_URL;
 
 /**
  * Basic app setup.
@@ -34,6 +34,8 @@ var appSetup = function (app) {
     app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
     app.use(compress());
     app.use(methodOverride());
+
+    console.log(process.env.DB_URL);
 
     i18n.configure({
         locales: ['en', 'sk'],

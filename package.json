@@ -1,6 +1,6 @@
 {
   "name": "WEBtlak",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "author": "Tomáš Stankovič <hello@slinto.sk> (http://slinto.sk/)",
   "scripts": {
     "start": "node server/app.js",

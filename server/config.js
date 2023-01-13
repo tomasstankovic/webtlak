@@ -31,7 +31,7 @@ let appSetup = function (app) {
   app.locals.APP_VER = APP_VER;
   app.engine("pug", require("pug").__express);
   app.set('view engine', 'pug');
-  app.set("views", path.join(__dirname, "server/views"));
+  app.set("views", path.join(__dirname, "views"));
   // app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
   app.use(compress());
   app.use(methodOverride());
@@ -65,7 +65,7 @@ let appSetup = function (app) {
     next();
   });
 
-  // Public folder setup.
+  // // Public folder setup.
   if (CURRENT_ENV === DEV_ENV) {
     app.use('/bower_components', express.static(path.join(__dirname, '../bower_components'), {
       redirect: false
@@ -83,6 +83,11 @@ let appSetup = function (app) {
     }));
     app.use('/', express.static(path.join(__dirname, '../data')));
   }
+
+  // app.use('/build', express.static(path.join(__dirname, '../build'), {
+  //   redirect: false
+  // }));
+  // app.use('/', express.static(path.join(__dirname, '../data')));
 
   router.setup(app);
 };

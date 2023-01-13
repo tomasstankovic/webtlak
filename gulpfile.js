@@ -146,7 +146,7 @@ gulp.task('start-server', function () {
   gulp.watch(['client/css/**/*.styl'], ['stylus']);
   gulp.watch(['client/js/**/*.js', '!/client/js/build.js'], ['webpack']);
   gulp.watch(['test/**/*.js'], ['test']);
-  gulp.watch(['build/css/app.css', 'build/img/**', 'server/views/**/*.jade']).on('change', livereload.changed);
+  gulp.watch(['build/css/app.css', 'build/img/**', 'server/views/**/*.pug']).on('change', livereload.changed);
   gulp.watch(['build/js/build-dev.js']).on('change', livereload.reload);
   gulp.watch(['client/img/**/*'], ['image-copy']);
 });

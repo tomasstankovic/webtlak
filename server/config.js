@@ -28,7 +28,7 @@ let DEV_ENV = 'DEVELOPMENT',
 let appSetup = function (app) {
   app.locals.CURRENT_ENV = CURRENT_ENV;
   app.locals.APP_VER = APP_VER;
-  app.set('view engine', 'jade');
+  app.set('view engine', 'pug');
   app.set('views', 'server/views');
   app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
   app.use(compress());

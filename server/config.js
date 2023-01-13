@@ -15,7 +15,8 @@ const router = require('./router');
 const pjson = require('../package.json');
 
 let DEV_ENV = 'DEVELOPMENT',
-  CURRENT_ENV = process.env.NODE_ENV || DEV_ENV,
+  // CURRENT_ENV = process.env.NODE_ENV || DEV_ENV,
+  CURRENT_ENV = DEV_ENV,
   APP_VER = pjson.version,
   APP_HOST,
   port = process.env.PORT || 8000,

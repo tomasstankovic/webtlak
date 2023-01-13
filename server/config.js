@@ -32,7 +32,8 @@ let appSetup = function (app) {
   app.engine("pug", require("pug").__express);
   app.set('view engine', 'pug');
   app.set('views', 'server/views');
-  app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
+  app.set("views", path.join(__dirname, "server/views"));
+  // app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
   app.use(compress());
   app.use(methodOverride());
   app.use(cookieParser());

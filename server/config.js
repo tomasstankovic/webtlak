@@ -28,6 +28,7 @@ let DEV_ENV = 'DEVELOPMENT',
 let appSetup = function (app) {
   app.locals.CURRENT_ENV = CURRENT_ENV;
   app.locals.APP_VER = APP_VER;
+  app.engine("pug", require("pug").__express);
   app.set('view engine', 'pug');
   app.set('views', 'server/views');
   app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));

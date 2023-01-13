@@ -31,7 +31,6 @@ let appSetup = function (app) {
   app.locals.APP_VER = APP_VER;
   app.engine("pug", require("pug").__express);
   app.set('view engine', 'pug');
-  app.set('views', 'server/views');
   app.set("views", path.join(__dirname, "server/views"));
   // app.use(favicon(__dirname + '/../build/img/favicon/favicon.ico'));
   app.use(compress());

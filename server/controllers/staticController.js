@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const helpers = require('../lib/helpers');
-const orderModel = require(process.cwd() + '/server/models/orderModel');
+// const orderModel = require(process.cwd() + '/server/models/orderModel');
 
 
 /**
@@ -63,43 +63,57 @@ router.get('/zachran-zapisnik', function (req, res) {
   minutes = (minutes < 10) ? `0${minutes}` : minutes;
   seconds = (seconds < 10) ? `0${seconds}` : seconds;
 
-  orderModel.find({}, function (err, orders) {
-    if (err) {
-      console.log(err);
-      return next(err);
-    }
+  // orderModel.find({}, function (err, orders) {
+  //   if (err) {
+  //     console.log(err);
+  //     return next(err);
+  //   }
 
-    res.render('static/zachran-zapisnik', {
-      title: 'Zachráň zápisník — Staň sa hrdinom)',
-      orders: orders,
-      ordersLength: orders.length,
-      orderComplete: req.query.hero || null,
-      time: {
-        days: days,
-        hours: hours,
-        minutes: minutes,
-        seconds: seconds,
-        percentage: percentage
-      }
-    });
+  //   res.render('static/zachran-zapisnik', {
+  //     title: 'Zachráň zápisník — Staň sa hrdinom)',
+  //     orders: orders,
+  //     ordersLength: orders.length,
+  //     orderComplete: req.query.hero || null,
+  //     time: {
+  //       days: days,
+  //       hours: hours,
+  //       minutes: minutes,
+  //       seconds: seconds,
+  //       percentage: percentage
+  //     }
+  //   });
+  // });
+
+  res.render('static/zachran-zapisnik', {
+    title: 'Zachráň zápisník — Staň sa hrdinom)',
+    orders: [],
+    ordersLength: [].length,
+    orderComplete: req.query.hero || null,
+    time: {
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+      percentage: percentage
+    }
   });
 });
 
-/**
- * POST: Zachran zapisnik
- */
-router.post('/zachran-zapisnik', function (req, res) {
-  const newOrder = new orderModel(req.body);
+// /**
+//  * POST: Zachran zapisnik
+//  */
+// router.post('/zachran-zapisnik', function (req, res) {
+//   const newOrder = new orderModel(req.body);
 
-  newOrder.save(function (err, record) {
-    if (err) {
-      console.log('Form required fields must be filled.');
-      res.redirect('/zachran-zapisnik?hero=false');
-      return true;
-    }
-    res.redirect('/zachran-zapisnik?hero=true');
-  });
-});
+//   newOrder.save(function (err, record) {
+//     if (err) {
+//       console.log('Form required fields must be filled.');
+//       res.redirect('/zachran-zapisnik?hero=false');
+//       return true;
+//     }
+//     res.redirect('/zachran-zapisnik?hero=true');
+//   });
+// });
 
 
 module.exports = router;

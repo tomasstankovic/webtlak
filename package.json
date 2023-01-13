@@ -1,13 +1,10 @@
 {
-  "name": "WEBtlak",
-  "version": "1.5.0",
+  "name": "webtlak",
+  "version": "1.6.0",
   "author": "Tomáš Stankovič <hello@slinto.sk> (http://slinto.sk/)",
   "scripts": {
     "start": "node server/app.js",
     "test": "gulp test-deployed"
-  },
-  "engines": {
-    "node": "^7.0.0"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
